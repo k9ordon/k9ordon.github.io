@@ -1,6 +1,6 @@
 # Site Info
 title:              "Klemens Gordon"
-description:        "Fullstack web developer with <3 for javascript, performance, coffee & cigarettes."
+description:        "Fullstack web developer with ❤️ for javascript, performance, coffee & cigarettes."
 google_verify:      epFgX0s_0RM3CdjwFcsewfXzPov2g8s9ZBOLyaIUH-o # Put your Google Verification here
 google_analytics:   UA-XXXXXXX-X # Put your Google Analytics code
 
@@ -27,6 +27,8 @@ kramdown:
     input:          GFM
 sass:
     style:          :compressed
+gems:
+  - jemoji
 
 # Other Params
 include:            [ "robots.txt" ]
