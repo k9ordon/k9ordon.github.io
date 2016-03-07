@@ -1,6 +1,6 @@
 # Site Info
-title:              "k94n"
-description:        "klemens gordon - fullstack web developer with <3 for javascript, performance, coffee & cigarettes."
+title:              "Klemens Gordon"
+description:        "Fullstack web developer with <3 for javascript, performance, coffee & cigarettes."
 google_verify:      epFgX0s_0RM3CdjwFcsewfXzPov2g8s9ZBOLyaIUH-o # Put your Google Verification here
 google_analytics:   UA-XXXXXXX-X # Put your Google Analytics code
 
@@ -9,6 +9,8 @@ author_name:        "Klemens Gordon"
 author_email:       gordon@k94n.com
 author_gravatar:    fdbc79cc36eae90eda5f23935eca0b35 # Gravatar md5 hash
 twitter_username:   thisisgordon
+github_username:    k9ordon
+
 
 # Site Settings
 baseurl:            "" # Base URL must end WITHOUT a slash, default: ""
