@@ -1,8 +1,8 @@
 # Site Info
 title:              "Klemens Gordon"
-description:        "Fullstack web developer with ❤️ for javascript, performance, coffee & cigarettes."
+description:        "Fullstack web developer with love for javascript, performance, coffee & cigarettes. Yadda. Yadda. Laser."
 google_verify:      epFgX0s_0RM3CdjwFcsewfXzPov2g8s9ZBOLyaIUH-o # Put your Google Verification here
-google_analytics:   UA-XXXXXXX-X # Put your Google Analytics code
+google_analytics:   UA-42261707-2 # Put your Google Analytics code
 
 # Author Info
 author_name:        "Klemens Gordon"
@@ -11,11 +11,10 @@ author_gravatar:    fdbc79cc36eae90eda5f23935eca0b35 # Gravatar md5 hash
 twitter_username:   thisisgordon
 github_username:    k9ordon
 
-
 # Site Settings
 baseurl:            "" # Base URL must end WITHOUT a slash, default: ""
 permalink:          /:title # Post permalink
-timezone:           Asia/Kuala_Lumpur # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:           Europe/Vienna # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 # Site Build
 highlighter:        pygments

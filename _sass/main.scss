@@ -1,14 +1,13 @@
 body {
   font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-  padding: 1.4em 20px;
+  padding: 0;
+
   margin: 0;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
   // background: url("/assets/bg.jpg");
-  @media (min-width: 992px) {
-    padding: 35px 50px;
-  }
+
 }
 h2,
 h3,
@@ -115,7 +114,7 @@ span[data-note] {
         // background-size: 40%;
     }
     to {
-        background-position: center -473px;
+        background-position: center -225px;
         // background-size: 40%;
     }
 }
@@ -123,30 +122,41 @@ span[data-note] {
 
 .logo {
   text-align: center;
-  // animation-duration: 0.7s;
-  // animation-fill-mode: both;
-  // animation-name: bounce;
-  // -webkit-animation-duration: 0.7s;
-  // -webkit-animation-fill-mode: both;
-  // -webkit-animation-name: bounce;
-  text-align: center;
-  max-width: 800px;
-  background: #BADDF3 url("/assets/bg-min.jpg") center center;
+  // max-width: 800px;
 
-  // background-size: 50%;
-  margin: 0 auto;
-  -webkit-animation: logoBackgroundScroll 30s linear infinite;
-  animation: logoBackgroundScroll 30s linear infinite;
+  background: #BADDF3 url("/assets/bg-min.jpg") center center;
+  -webkit-animation: logoBackgroundScroll 10s linear infinite;
+  animation: logoBackgroundScroll 10s linear infinite;
+
+  // background-size: 200px;
+  margin: 0 auto 60px;
+  height:150px;
 
   a {
+    animation-duration: 0.7s;
+    animation-fill-mode: both;
+    animation-name: bounce;
+    -webkit-animation-duration: 0.7s;
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-name: bounce;
+
     text-decoration: none;
     font-weight: 700;
     border-bottom: 0px;
     height: 80px;
     width: 80px;
-    margin:2.8em;
+
+    position: relative;
+    top: 110px;
+    // margin:2.8em;
+
+    @media (min-width: 992px) {
+    //   margin: 4.2em;
+    }
+
     display: inline-block;
     box-sizing: border-box;
+
     &:hover,
     &:focus {
     //   background: #f14e32;
@@ -243,10 +253,10 @@ iframe {
 }
 
 .divider {
-  // background: #ddd;
-  // background: -webkit-gradient(linear,left top,right top,from(rgba(255,255,255,0)),color-stop(#ccc),to(rgba(255,255,255,0)));
-  // background: -webkit-linear-gradient(left,rgba(255,255,255,0),#ccc,rgba(255,255,255,0));
-  // background: linear-gradient(to right,rgba(255,255,255,0),#ccc,rgba(255,255,255,0));
+  background: #ddd;
+  background: -webkit-gradient(linear,left top,right top,from(rgba(255,255,255,0)),color-stop(#ccc),to(rgba(255,255,255,0)));
+  background: -webkit-linear-gradient(left,rgba(255,255,255,0),#ccc,rgba(255,255,255,0));
+  background: linear-gradient(to right,rgba(255,255,255,0),#ccc,rgba(255,255,255,0));
   height: 1px;
   margin: 2em 0;
 }
@@ -254,13 +264,18 @@ iframe {
   text-align: center;
   margin: 0 auto;
 }
-
 main, .footer {
   max-width: 500px;
   margin: 0 auto;
   background: #fff;
+
+  padding: 0 20px;
+  @media (min-width: 992px) {
+    padding: 0 50px;
+  }
 }
 .footer {
+    padding-top:4em;
     color: #555;
 }
 h1.title {
@@ -342,35 +357,35 @@ section {
     }
   }
 }
-// @keyframes bounce {0% {
-//     transform: translate3d( 0, -1000px, 0 );
-//   }
-//   60% {
-//     transform: translate3d( 0, 25px, 0 );
-//   }
-//   75% {
-//     transform: translate3d( 0, -10px, 0 );
-//   }
-//   90% {
-//     transform: translate3d( 0, 5px, 0 );
-//   }
-//   100% {
-//     transform: none;
-//   }
-// }
-// @-webkit-keyframes bounce {0% {
-//     -webkit-transform: translate3d( 0, -1000px, 0 );
-//   }
-//   60% {
-//     -webkit-transform: translate3d( 0, 25px, 0 );
-//   }
-//   75% {
-//     -webkit-transform: translate3d( 0, -10px, 0 );
-//   }
-//   90% {
-//     -webkit-transform: translate3d( 0, 5px, 0 );
-//   }
-//   100% {
-//     -webkit-transform: none;
-//   }
-// }
+@keyframes bounce {0% {
+    transform: translate3d( 0, -1000px, 0 );
+  }
+  60% {
+    transform: translate3d( 0, 25px, 0 );
+  }
+  75% {
+    transform: translate3d( 0, -10px, 0 );
+  }
+  90% {
+    transform: translate3d( 0, 5px, 0 );
+  }
+  100% {
+    transform: none;
+  }
+}
+@-webkit-keyframes bounce {0% {
+    -webkit-transform: translate3d( 0, -1000px, 0 );
+  }
+  60% {
+    -webkit-transform: translate3d( 0, 25px, 0 );
+  }
+  75% {
+    -webkit-transform: translate3d( 0, -10px, 0 );
+  }
+  90% {
+    -webkit-transform: translate3d( 0, 5px, 0 );
+  }
+  100% {
+    -webkit-transform: none;
+  }
+}
