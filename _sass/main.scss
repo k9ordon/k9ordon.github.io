@@ -1,3 +1,7 @@
+html {
+    height: 100%;
+}
+
 body {
   font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
   padding: 0;
@@ -8,6 +12,15 @@ body {
   -webkit-text-size-adjust: 100%;
   // background: url("/assets/bg.jpg");
 
+
+  background: #BADDF3 url("/assets/bg-min.jpg") center center;
+  -webkit-animation: logoBackgroundScroll 15s linear infinite;
+  animation: logoBackgroundScroll 15s linear infinite;
+  background-attachment: fixed;
+
+  display:flex;
+  flex-direction: column;
+  min-height: 100%;
 }
 h2,
 h3,
@@ -124,13 +137,11 @@ span[data-note] {
   text-align: center;
   // max-width: 800px;
 
-  background: #BADDF3 url("/assets/bg-min.jpg") center center;
-  -webkit-animation: logoBackgroundScroll 10s linear infinite;
-  animation: logoBackgroundScroll 10s linear infinite;
-
   // background-size: 200px;
-  margin: 0 auto 60px;
-  height:150px;
+  margin: 0 auto;
+  height:200px;
+
+  position: relative;
 
   a {
     animation-duration: 0.7s;
@@ -146,8 +157,10 @@ span[data-note] {
     height: 80px;
     width: 80px;
 
-    position: relative;
-    top: 110px;
+    position: absolute;
+    bottom: -40px;
+    left:50%;
+    margin-left:-40px;
     // margin:2.8em;
 
     @media (min-width: 992px) {
@@ -265,13 +278,16 @@ iframe {
   margin: 0 auto;
 }
 main, .footer {
-  max-width: 500px;
-  margin: 0 auto;
+  // max-width: 500px;
+  // margin: 0 auto;
   background: #fff;
 
-  padding: 0 20px;
+  flex:1;
+
+  padding: 40px 20px;
+
   @media (min-width: 992px) {
-    padding: 0 50px;
+    padding: 40px 50px;
   }
 }
 .footer {
@@ -288,6 +304,7 @@ h1.title {
 article {
   max-width: 500px;
   margin: 0 auto;
+
   hr {
     border: 0;
     border-bottom: 1px solid #000;
