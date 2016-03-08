@@ -1,22 +1,13 @@
 ---
 layout: page
-title: About
+title: Klemens Gordon
 ---
 
-```json
-{
-  "name": "Klemens Gordon",
-  "daytime": "http://dev.karriere.at",
-  "code": "http://github.com/k9ordon",
-  "talk": "http://twitter.com/thisisgordon",
-  "token": [
-    "javascript",
-    "frontend",
-    "laser",
-    "ui",
-    "mobile",
-    "ember.js"
-  ],
-  "le mail": "hello@k94n.com"
-}
-```
+Hi internet!
+
+My name is Klemens Gordon - I am a fullstack–webapplication-developer from austria.
+At daytime I work as lead frontend developert at [karriere.at](http://www.karriere.at). I enjoy javascript, beer and webperformance.
+
+You can find my code at [github/k9ordon](http://github.com/k9ordon), follow me on [twitter/thisisgordon](http://twitter.com/thisisgordon). Sometimes I talk at meetups and conferences you can find my slides at [speakerdeck/k9ordon](https://speakerdeck.com/k9ordon)
+
+If you are interested in stuff - grab a coffee & hit me at  &#104;&#105;&#064;&#107;&#057;&#052;&#110;&#046;&#099;&#111;&#109;
