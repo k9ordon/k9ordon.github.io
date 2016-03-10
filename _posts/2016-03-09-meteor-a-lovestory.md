@@ -30,7 +30,6 @@ meteor create leproject
 meteor
 ```
 
-We create a project named „leproject“ (:guardsman: obviously ur own project name). After starting the project with ```meteor``` command we are ready for code. The dev environment includes a running mongodb host,  node.js server and live reload with [hotcodepush](http://info.meteor.com/blog/meteor-hot-code-push). Meteor also creates some sample files go get you up fast.
 
 ## App structure
 
