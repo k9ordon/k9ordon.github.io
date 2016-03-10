@@ -8,7 +8,7 @@ This article is a rough overview of some selected concepts and technics I am usi
 
 - Barely no dev-ops from first line to production.
 - Sophisticated Template Engine
-- Realtime Default
+- Realtime per default
 - Painless cordova mobile builds
 
 Meteor is very well [documented](http://docs.meteor.com/#/full/) and has a huge package-catalog called [Atmosphere](https://atmospherejs.com/).
