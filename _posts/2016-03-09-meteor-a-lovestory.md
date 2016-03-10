@@ -11,7 +11,7 @@ This article is a rough overview of some selected concepts and techniques that I
 - Realtime per default
 - Painless cordova mobile builds
 
-Meteor is very well [documented](http://docs.meteor.com/#/full/) and has a huge package-catalog called [Atmosphere](https://atmospherejs.com/).
+Meteor.js is very well [documented](http://docs.meteor.com/#/full/) and has a huge package-catalog called [Atmosphere](https://atmospherejs.com/).
 
 ## Installation
 
@@ -109,7 +109,7 @@ Add a less file and it’s shipped processed. Source map support, watcher for li
 ## Deploying :open_mouth:
 
 After 5 minutes of sophisticated hacking its time to deploy out web application. From my experience this is the part where the beer comes in. Searching for a poster, setting up linux, installing web server, configuring databases … :beer:
-As I we knew from the beginning meteor is about rapid prototyping. So forget all the beers stuff about configuration and installing apt stuff. We do it the meteor way:
+As I we knew from the beginning Meteor.js is about rapid prototyping. So forget all the beers stuff about configuration and installing apt stuff. We do it the Meteor.js way:
 
 ```sh
 meteor deploy leproject
@@ -120,7 +120,7 @@ Your app is now live at leproject.meteor.com - This is officially available for 
 
 ## Mobile builds
 
-As meteor has cordova build in this is also a very straight forward process. Add the platform and run it.
+As Meteor.js has cordova build in this is also a very straightforward process. Add the platform and run it.
 
 ```sh
 meteor add-platform ios
@@ -135,9 +135,9 @@ This will fire up the iOS simulator from Xcode and boots your app in a phonegap 
 
 Meteors persistent data layer is Monogodb with some more magic.
 
-Data fetching is done with a Protocol called [DDP](https://www.meteor.com/ddp) (Distributed Data Protocol). Just remember its **REST for Websockets**. Everything in meteor is realtime by default, which is done by livequery a live database connector for Mongo (theoretically also mysql #wtf). From a very high perspective: You do a query - get results - get all the changes to this query via web socket. :raised_hands:
+Data fetching is done with [DDP](https://www.meteor.com/ddp) (Distributed Data Protocol). Just remember it is **REST for Websockets**. Everything in Meteor.js is realtime by default, which is achieved by livequery a live database connector for Mongo (theoretically also mysql #wtf). From a very high perspective: You execute a query - get results and all subsequent changes to this query via web socket. :raised_hands:
 
-Meteor also feels fast because of a concept called **Optimistic UI**. All the data the fly between mongodb and client gets cached in a minimongo. If a template gets rendered it instantly renders with data from minimongo and then updates with data from monogdb.
+Meteor.js also feels fast because of a concept called **Optimistic UI**. All the data the fly between Mongodb and client gets cached in a minimongo. If a template gets rendered it instantly renders with data from minimongo and then updates with data from monogdb.
 
 Enough theory - now some code. Somewhere in your global scope:
 
@@ -171,7 +171,7 @@ Template.list.helpers({
 
 ## MVC
 
-As meteor doesnt come with a build in router there are some 3rd party routers. Meteor guide recommends [flow-router](https://atmospherejs.com/kadira/flow-router). Another common router is [Iron Router](https://github.com/iron-meteor/iron-router).
+As Meteor.js doesn't come with a built-in router there are some 3rd party routers. Meteor.js guide recommends [flow-router](https://atmospherejs.com/kadira/flow-router). Another common router is [Iron Router](https://github.com/iron-meteor/iron-router).
 
 Install iron router via atmosphere - again easy as firin:
 
@@ -192,7 +192,7 @@ Router.route('/', function () {
 
 ## „We need user accounts“
 
-While using emberjs or other client frameworks this is really a pain. Compared to drawing a login button in your mockups. You need an implementation for the client, a backend service with does the user logic, session handling, emailing … yadda yadda yadda. As meteor is a full stack framework **meteor packages are also full stack**.
+Using emberjs or other client frameworks this is really a pain. Compared to drawing a login button in your mockups. You need an implementation for the client, a backend service with does the user logic, session handling, emailing … yadda yadda yadda. As Meteor.js is a full stack framework **Meteor.js packages are also full stack**.
 
 So lets point out the fast lane:
 
