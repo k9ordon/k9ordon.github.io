@@ -173,7 +173,7 @@ Template.list.helpers({
 
 As Meteor.js doesn't come with a built-in router there are some 3rd party routers. Meteor.js guide recommends [flow-router](https://atmospherejs.com/kadira/flow-router). Another common router is [Iron Router](https://github.com/iron-meteor/iron-router).
 
-Install iron router via atmosphere - again easy as firin:
+Install iron router via Atmosphere - again easy as firin:
 
 ```sh
 meteor add iron:router
