@@ -12,7 +12,7 @@ layout: compress
 	<body>
 		{% include header.html %}
 
-		<main>
+		<main class="{{page.class}}">
 			{{ content | replace: '&#8617;', '&#8617;&#xfe0e;' }}
 		</main>
 

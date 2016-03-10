@@ -280,6 +280,20 @@ main {
     padding: 40px 50px;
   }
 }
+
+main.error {
+    p {
+        max-width: 280px;
+        margin:0 auto;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .emoji {
+        height: 30px;
+        width: 30px;
+    }
+}
 .footer {
     // padding-top:4em;
     color: #555;
