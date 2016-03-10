@@ -39,7 +39,7 @@ npm i css-loader style-loader -D
 
 ## 3. loaders
 
-preprocess es6 with loaders. config moved to ```webpack.config.js```
+[preprocess es6 with loaders](https://webpack.github.io/docs/loaders.html). config moved to ```webpack.config.js```
 
 ```sh
 npm i babel-loader babel-core babel-preset-es2015 -D
