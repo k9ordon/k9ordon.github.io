@@ -108,8 +108,8 @@ Add a less file and it’s shipped processed. Source map support, watcher for li
 
 ## Deploying :open_mouth:
 
-After 5 minutes of sophisticated hacking its time to deploy out web application. From my experience this is the part where the beer comes in. Searching for a poster, setting up linux, installing web server, configuring databases … :beer:
-As I we knew from the beginning Meteor.js is about rapid prototyping. So forget all the beers stuff about configuration and installing apt stuff. We do it the Meteor.js way:
+After 5 minutes of sophisticated hacking it's time to deploy out web application. From my experience this is the part where the beer comes in. Searching for a poster, setting up linux, installing web server, configuring databases … :beer:
+As I knew from the beginning, Meteor.js is about rapid prototyping. So forget all the beers stuff about configuration and installing apt stuff. We do it the Meteor.js way:
 
 ```sh
 meteor deploy leproject
