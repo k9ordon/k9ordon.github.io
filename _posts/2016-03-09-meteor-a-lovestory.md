@@ -222,4 +222,4 @@ Uses phantom.js to serve a „spiderable“ static version of your javascript ap
 
 ## Final words
 
-I :green_heart: meteor.js for getting non funky stuff out of the way. You can build fast and modern stuff very efficient. And go to the more refined stuff in later iterations.
+I :green_heart: Meteor.js for getting non funky stuff out of the way. You can build fast and modern stuff very efficiently. And focus on the more refined stuff in later iterations.
