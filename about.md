@@ -3,7 +3,7 @@ layout: page
 title: Klemens Gordon
 ---
 
-Hi internet!
+Hi internet! :boar:
 
 My name is Klemens Gordon - I am a fullstack–webapplication-developer from austria.
 At daytime I work as lead frontend developert at [karriere.at](http://www.karriere.at/dev-blog). I enjoy javascript, beer and webperformance.

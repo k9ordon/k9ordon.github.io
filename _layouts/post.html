@@ -1,11 +1,23 @@
 ---
 layout: default
 ---
+
 <article>
 
 	<div class="center">
 		<h1>{{ page.title }}</h1>
 		<time>{{ page.date | date: '%B %-d, %Y' }}</time>
+		<span class="readtime">
+			{% capture read_time %}
+			  {{ page.content | number_of_words | divided_by: 180 }}
+			{% endcapture %}
+
+			~{% if read_time != '0' %}
+			  {{ read_time }}
+			{% else %}
+			  1
+			{% endif %} min read
+		</span>
 	</div>
 
 	<div class="divider"></div>
@@ -14,6 +26,16 @@ layout: default
 
 </article>
 
-<div class="back">
-	<a href="{{site.baseurl}}/">Back</a>
+<div class="action">
+	{% if page.tweet %}
+	<div class="block">
+		<a href="https://twitter.com/intent/tweet?in_reply_to={{ page.tweet }}">Comment</a>
+	</div>
+	<div class="block middle">
+		<img class="emoji" title=":open_hands:" alt=":open_hands:" src="https://assets.github.com/images/icons/emoji/unicode/1f450.png" height="20" width="20" align="absmiddle">
+	</div>
+	{% endif %}
+	<div class="block">
+		<a href="{{site.baseurl}}/">Back</a>
+	</div>
 </div>
