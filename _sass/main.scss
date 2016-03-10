@@ -132,6 +132,8 @@ span[data-note] {
     -webkit-animation: logoBackgroundScroll 15s linear infinite;
     animation: logoBackgroundScroll 15s linear infinite;
 
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+      -webkit-tap-highlight-color: transparent;
 
   position: relative;
 
@@ -142,6 +144,24 @@ span[data-note] {
     -webkit-animation-duration: 0.7s;
     -webkit-animation-fill-mode: both;
     -webkit-animation-name: bounce;
+
+    &:active img {
+        animation-duration: 1.5s;
+        animation-fill-mode: both;
+        animation-iteration-count: 1;
+        -webkit-animation-duration: 1.5s;
+        -webkit-animation-fill-mode: both;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+
+        animation-name: exit;
+        -webkit-animation-name: exit;
+        //
+        // -webkit-transform: scale(0.95) translate3d( 0px, 3px, 0 );
+        // transform: scale(0.95) translate3d( 0px, 3px, 0 );
+
+    }
 
     text-decoration: none;
     font-weight: 700;
@@ -410,7 +430,8 @@ section {
     }
   }
 }
-@keyframes bounce {0% {
+@keyframes bounce {
+  0% {
     transform: translate3d( 0, -1000px, 0 );
   }
   60% {
@@ -426,7 +447,8 @@ section {
     transform: none;
   }
 }
-@-webkit-keyframes bounce {0% {
+@-webkit-keyframes bounce {
+  0% {
     -webkit-transform: translate3d( 0, -1000px, 0 );
   }
   60% {
@@ -441,4 +463,15 @@ section {
   100% {
     -webkit-transform: none;
   }
+}
+
+@keyframes exit {
+    100% {
+        transform: scale(1) translate3d( 0px, -200px, 0 );
+    }
+}
+@-webkit-keyframes exit {
+    100% {
+        -webkit-transform: scale(1) translate3d( 0px, -200px, 0 );
+    }
 }
