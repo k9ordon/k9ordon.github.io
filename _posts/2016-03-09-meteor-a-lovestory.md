@@ -194,7 +194,7 @@ Router.route('/', function () {
 
 Using emberjs or other client frameworks this is really a pain. Compared to drawing a login button in your mockups. You need an implementation for the client, a backend service with does the user logic, session handling, emailing … yadda yadda yadda. As Meteor.js is a full stack framework **Meteor.js packages are also full stack**.
 
-So lets point out the fast lane:
+So let's point out the fast lane:
 
 ```sh
 meteor add accounts-ui accounts-password
@@ -205,9 +205,10 @@ Bruh. Done.
 {% raw %}
 In your template include the ```{{> loginButtons}}``` partial to register/login. And you have ```{{#if currentUser}}``` available to do stuff for logged in users.
 {% endraw %}
-Again this is for rapid prototyping. You can also roll your own routes/templates/logic whatever for more sophistication. But MVP can be done fast.
 
-Same with oauth: ```meteor add accounts-facebook``` lets you do a full fleged Facebook oauth. Woooot? :scream:
+Again this is for rapid prototyping. You can also roll your own routes/templates/logic whatsoever for more sophistication. But MVP can be done fast.
+
+Same with oauth: ```meteor add accounts-facebook``` let's you do a fully fledged Facebook oauth. Woooot? :scream:
 
 ## Seo
 
