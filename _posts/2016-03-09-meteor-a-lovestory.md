@@ -135,7 +135,7 @@ This will fire up the iOS simulator from Xcode and boots your app in a phonegap 
 
 Meteor's persistent data layer is Monogodb with some more magic.
 
-Data fetching is done with [DDP](https://www.meteor.com/ddp) (Distributed Data Protocol). Just remember it is **REST for Websockets**. Everything in Meteor.js is realtime by default, which is achieved by livequery a live database connector for Mongo (theoretically also mysql #wtf). From a very high perspective: You execute a query - get results and all subsequent changes to this query via web socket. :raised_hands:
+Data fetching is done with [DDP](https://www.meteor.com/ddp) (Distributed Data Protocol). Just remember it is **REST for Websockets**. Everything in Meteor.js is realtime by default, which is done by livequery a live database connector for Mongo (theoretically also mysql #wtf). From a very high perspective: You execute a query - get results and all subsequent changes to this query via web socket. :raised_hands:
 
 Meteor.js also feels fast because of a concept called **Optimistic UI**. All the data the fly between Mongodb and client gets cached in a minimongo. If a template gets rendered it instantly renders with data from minimongo and then updates with data from monogdb.
 
