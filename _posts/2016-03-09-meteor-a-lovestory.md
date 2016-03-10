@@ -120,7 +120,7 @@ Your app is now live at leproject.meteor.com - This is officially available for 
 
 ## Mobile builds
 
-As Meteor.js has cordova build in this is also a very straightforward process. Add the platform and run it.
+As Meteor.js has cordova built-in this is also a very straightforward process. Add the platform and run it.
 
 ```sh
 meteor add-platform ios
