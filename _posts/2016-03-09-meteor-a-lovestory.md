@@ -112,11 +112,11 @@ After 5 minutes of sophisticated hacking its time to deploy out web application.
 As I we knew from the beginning meteor is about rapid prototyping. So forget all the beers stuff about configuration and installing apt stuff. We do it the meteor way:
 
 ```sh
-meteor deploy yoloyolo1
+meteor deploy leproject
 ```
-:guardsman: Cpt. obvious again: yoloyolo1 is your project name.
+:guardsman: Cpt. obvious again: leproject is your project name.
 
-Your app is now live at yoloyolo1.meteor.com - This is officially available for prototyping only and is no production solution. It’s a fast way to get all the dev-ops stuff out of the way and just build the MVP.
+Your app is now live at leproject.meteor.com - This is officially available for prototyping only and is no production solution. It’s a fast way to get all the dev-ops stuff out of the way and just build the MVP.
 
 ## Mobile builds
 
