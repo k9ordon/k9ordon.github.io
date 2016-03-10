@@ -116,7 +116,7 @@ meteor deploy yoloyolo1
 ```
 :guardsman: Cpt. obvious again: yoloyolo1 is your project name.
 
-Your app is now live at yoloyolo1.meteor.com - Officially this is for prototyping only and is no production solution. It’s a fast way to get all the dev-ops stuff out of the way and just build the mvp product.
+Your app is now live at yoloyolo1.meteor.com - This is officially available for prototyping only and is no production solution. It’s a fast way to get all the dev-ops stuff out of the way and just build the MVP.
 
 ## Mobile builds
 
