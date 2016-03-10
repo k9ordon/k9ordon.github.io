@@ -3,7 +3,7 @@ title: Webpack FTW!!!!
 updated: 2016-03-07 23:00
 ---
 
-[![shipping a frontend](https://raw.githubusercontent.com/k9ordon/webpack-ftw/master/assets/cover.png)](https://speakerdeck.com/k9ordon/webpack-ftw)
+[![shipping a frontend](/assets/webpack-ftw/cover.png)](https://speakerdeck.com/k9ordon/webpack-ftw)
 
 simple steps for shipping a frontend with webpack - [show slides](https://speakerdeck.com/k9ordon/webpack-ftw)
 
@@ -23,7 +23,7 @@ simple webpack bundle example with dependencies
 webpack entry.js bundle.js
 ```
 
-![](https://raw.githubusercontent.com/k9ordon/webpack-ftw/master/assets/1.png)
+![](/assets/webpack-ftw/1.png)
 
 
 
@@ -35,7 +35,7 @@ adding css to modules via .js  ```require('style!css!./entry.css')```
 npm i css-loader style-loader -D
 ```
 
-![](https://raw.githubusercontent.com/k9ordon/webpack-ftw/master/assets/2.png)
+![](/assets/webpack-ftw/2.png)
 
 ## 3. loaders
 
@@ -47,7 +47,7 @@ npm i babel-loader babel-core babel-preset-es2015 -D
 webpack --config webpack.config.js
 ```
 
-![](https://raw.githubusercontent.com/k9ordon/webpack-ftw/master/assets/3.png)
+![](/assets/webpack-ftw/3.png)
 
 
 ## 4. code splitting
@@ -57,7 +57,7 @@ extract css files && commons code
 npm install extract-text-webpack-plugin -D
 ```
 
-![](https://raw.githubusercontent.com/k9ordon/webpack-ftw/master/assets/4.png)
+![](/assets/webpack-ftw/4.png)
 
 ## 5. dev server & hmr
 
