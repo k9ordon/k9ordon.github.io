@@ -37,7 +37,7 @@ Basically its simple: **All files are concatenated** and shipped. :metal:
 
 There are some „special“ directories inside your project affecting: load order, where they are loaded, and some other characteristics.
 
-- **/client** javascript that is only shipped to client. Will not affect node.js. Files in this directory are executed before other client code. Equivalent to ```if (Meteor.isClient) {}``` wrapped code.
+- **/client** javascript that is solely shipped to the client. Will not affect Nodejs. Files in this directory are executed before other client code. Equivalent to ```if (Meteor.isClient) {}``` wrapped code.
 - **/server** as you can guess this is the opposite of client.  ```if (Meteor.isServer) {}```
 - **/public** served as-is to the client. Images, icons and other static unprocessed assets.
 - **/private** Only accessible from server code. Can be loaded via [Assets api](http://docs.meteor.com/#assets).
