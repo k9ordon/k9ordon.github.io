@@ -98,7 +98,7 @@ Template.hello.events({
 
 ## Preprocessing Less
 
-A very common tasks is setting up your css preprocessor. Meteors amazing package system does this extremely painless:
+A very common task is setting up your css preprocessor. Meteor's amazing package system does this extremely painless:
 
 ```sh
 meteor add less
