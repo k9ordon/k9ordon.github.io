@@ -3,11 +3,13 @@ title: Meteor.js - A lovestory
 updated: 2016-03-09 23:00
 ---
 
-Meteor.js is a **full stack javascript framework** for building modern web applications on a unified javascript stack (MongoDB, Node.js, Browser). If you want to build application fast - it's definitely the way to go.
-This article is a rough overview of some selected concepts and techniques that I am using for side projects. Some key benefits of Meteor.js:
+Meteor.js is a **full stack javascript framework** for building modern web applications on a unified javascript stack (MongoDB, Node.js, Browser). If you want to build application fast, it's definitely the way to go.
+This article provides a rough overview of some selected concepts and techniques that I am using for side projects.
+
+Some key benefits of Meteor.js are:
 
 - Barely any dev-ops from the first line to production
-- Sophisticated Template Engine
+- Sophisticated template engine
 - Realtime per default
 - Painless Cordova mobile builds
 
@@ -36,15 +38,15 @@ We create a project named „leproject“ (:guardsman: obviously ur own project 
 
 Basically its simple: **All files are concatenated** and shipped. :metal:
 
-There are some „special“ directories inside your project affecting: load order, their destination, and some other characteristics.
+There are some „special“ directories inside your project affecting load order, destination of script files, and some other characteristics.
 
-- **/client** javascript that is solely shipped to the client. Will not affect Node.js. Files in this directory are executed before other client code. Equivalent to ```if (Meteor.isClient) {}``` wrapped code.
+- **/client** javascript that should solely be shipped to the client. Will not affect Node.js. Files in this directory are executed before other client code. Equivalent to ```if (Meteor.isClient) {}``` wrapped code.
 - **/server** as you can guess this is the opposite of client:  ```if (Meteor.isServer) {}```
 - **/public** served as-is to the client. Images, icons and other static unprocessed assets.
 - **/private** Only accessible from server code. Can be loaded via [Assets api](http://docs.meteor.com/#assets).
 - **/lib** common code like collections and utilities. Loaded first.
 
-When Meteor.js concatenates javascript there are some rules for controlling the order. From first to last:
+When Meteor.js concatenates javascript, there are some rules for controlling the order. From first to last:
 *HTML templates > files beginning with main > files inside lib > deeper Path > alphabetical*
 
 Read [more about load order](http://docs.meteor.com/#/full/fileloadorder) on meteor.com.
@@ -98,18 +100,18 @@ Template.hello.events({
 
 ## Preprocessing Less
 
-Very common task is setting up your CSS preprocessor. Meteor.js' amazing package system handles this extremely painless:
+A very common task is setting up your CSS preprocessor. Meteor.js' amazing package system handles this extremely painless:
 
 ```sh
 meteor add less
 ```
 
-Add a less file and it’s shipped processed. Source map support, a watcher for live reload and everything. Same for coffee script, sass whatsoever.
+Add a less file and it’s processed before publishing. Source map support, a watcher for live reload and everything. Same for coffee script, sass whatsoever.
 
 ## Deploying :open_mouth:
 
-After 5 minutes of sophisticated hacking it's time to deploy out web application. From my experience, this is the part where the beer comes in. Searching for a poster, setting up Linux, installing a web server, configuring databases … :beer:
-As I knew from the beginning, Meteor.js is about rapid prototyping. So forget all the beers stuff about configuration and installing apt stuff. We do it the Meteor.js way:
+After 5 minutes of sophisticated hacking it's time to deploy our web application. From my experience, this is the part where the beer comes in. Searching for a poster, setting up Linux, installing a web server, configuring databases … :beer:
+As I mentioned in the very first paragraph, Meteor.js is about rapid prototyping. So forget all the beers stuff about configuration and installing apt stuff. We do it the Meteor.js way:
 
 ```sh
 meteor deploy leproject
@@ -120,7 +122,7 @@ Your app is now live at leproject.meteor.com - Officially this is for prototypin
 
 ## Mobile builds
 
-As Meteor.js has Cordova build in this is also a very straight forward process. Add the platform and run it.
+As Meteor.js has Cordova built-in, this is also a very straight forward process. Add the platform and run it.
 
 ```sh
 meteor add-platform ios
@@ -133,11 +135,11 @@ This will fire up the iOS simulator from Xcode and boots your app in a PhoneGap 
 
 ## Collections & Data
 
-Meteors persistent data layer is MongoDB with some more magic.
+Meteor.js' persistent data layer is MongoDB with some more magic.
 
-Data fetching is done with [DDP](https://www.meteor.com/ddp) (Distributed Data Protocol). Just remember its **REST for Websockets**. Everything in Meteor.js is realtime by default, which is done by livequery a live database connector for Mongo (theoretically also MySQL #wtf). From a very high perspective: You execute a query - get results and all subsequent changes to this very query via web socket. :raised_hands:
+Data fetching is done with [DDP](https://www.meteor.com/ddp) (Distributed Data Protocol). Just remember its **REST for Websockets**. Everything in Meteor.js is realtime by default, which is done by livequery a live database connector for Mongo (theoretically also MySQL #wtf). From a very high perspective: You execute a query, receive the result and all subsequent changes to this very query via web socket. :raised_hands:
 
-Meteor.js also feels fast because of a concept called **Optimistic UI**. All the data the fly between MongoDB and client gets cached in a minimongo. If a template gets rendered it instantly renders with data from minimongo and then updates with data from MongoDB.
+Meteor.js also feels fast because of a concept called **Optimistic UI**. All the data that is transferred between MongoDB and clients, gets cached in a minimongo. If a template gets rendered it instantly renders with data from minimongo and then updates with data from MongoDB.
 
 Enough theory - now some code. Somewhere in your global scope:
 
@@ -163,9 +165,9 @@ You just successfully added a record and pushed it in realtime to all clients ob
 
 ```js
 Template.list.helpers({
-    yos: function() {
-        return Yos.find({}, {limit:10, sort:{createdAt:-1}});
-    }
+  yos: function() {
+    return Yos.find({}, {limit:10, sort:{createdAt:-1}});
+  }
 });
 ```
 
@@ -184,17 +186,17 @@ Sample route:
 ```js
 Router.route('/', function () {
   this.render(
-      'Index',
-      {data: {iAmFlag: 1}}
+    'Index',
+    {data: {iAmFlag: 1}}
   );
 });
 ```
 
 ## „We need user accounts“
 
-While using ember.js or other client frameworks this is really a pain. Compared to drawing a login button in your mockups. You need an implementation for the client, a backend service with does the user logic, session handling, emailing … yadda yadda yadda. As Metero.js is a full stack framework **Meteor.js packages are also full stack**.
+Implementing authentication using ember.js or other client frameworks is really a pain. Drawing a login button in your mockups, implementation for the client, a backend service that does the user logic, session handling, emailing … yadda yadda yadda. As Metero.js is a full stack framework **Meteor.js packages are also full stack**.
 
-So let's point out the fast lane:
+So let's point you to the fast lane:
 
 ```sh
 meteor add accounts-ui accounts-password
