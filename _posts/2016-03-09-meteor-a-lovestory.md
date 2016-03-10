@@ -6,7 +6,7 @@ updated: 2016-03-09 23:00
 Meteor is a **fullstack javascript framework** for building modern web applications on a complete javascript stack (Mongodb, Nodejs, Browser). If you want to build application fast - it's definitely the way to go.
 This article is a rough overview of some selected concepts and technics I am using for side projects. Some key benefits of meteor:
 
-- Barely no dev-ops from first line to production.
+- Barely no dev-ops from first line to production
 - Sophisticated Template Engine
 - Realtime per default
 - Painless cordova mobile builds
