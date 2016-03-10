@@ -61,7 +61,7 @@ npm install extract-text-webpack-plugin -D
 
 ## 5. dev server & hmr
 
-start a development server with hot module reload at [localhost:8080](http://localhost:8080/webpack-dev-server/)
+start a development server with [hot module replacement](http://webpack.github.io/docs/hot-module-replacement-with-webpack.html) at [localhost:8080](http://localhost:8080/webpack-dev-server/)
 
 ```sh
 webpack-dev-server --config webpack.config.js --hot --inline -d
