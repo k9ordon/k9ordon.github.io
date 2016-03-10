@@ -190,7 +190,7 @@ h1 {
 ul,
 ol {
   margin: 40px 0;
-  padding-left: 50px;
+  padding-left: 0px;
   li {
     word-wrap: break-word;
   }
@@ -213,7 +213,7 @@ pre {
   font-family: Consolas, monospace, x;
 }
 code {
-  color: #f14e32;
+  // color: #f14e32;
   background: #eee;
   padding: 2px 6px;
   font-size: 13px;
