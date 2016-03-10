@@ -149,13 +149,13 @@ Add a new event to a template containing a form:
 
 ```js
 Template.form.events({
-    "submit form": function (event) {
-        event.preventDefault();
+  "submit form": function (event) {
+    event.preventDefault();
 
-        Yos.insert({
-            createdAt: new Date()
-        });
-    }
+    Yos.insert({
+      createdAt: new Date()
+    });
+  }
 });
 ```
 
