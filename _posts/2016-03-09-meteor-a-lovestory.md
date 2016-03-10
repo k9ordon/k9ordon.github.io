@@ -34,7 +34,7 @@ We create a project named „leproject“ (:guardsman: obviously ur own project 
 
 ## App structure
 
-Basically its simple: **All files are concated** and shipped. :metal:
+Basically its simple: **All files are concatenated** and shipped. :metal:
 
 There are some „special“ directories inside your project affecting: load order, where they are loaded, and some other characteristics.
 
@@ -44,7 +44,7 @@ There are some „special“ directories inside your project affecting: load ord
 - **/private** Only accessible from server code. Can be loaded via [Assets api](http://docs.meteor.com/#assets).
 - **/lib** common code like collections and utilities. Loaded first.
 
-When meteor concates javascript there are some rules for controlling the order. From first to last:
+When Meteor.js concatenates javascript there are some rules for controlling the order. From first to last:
 *html templates > files beginning with main > files inside lib > deeper Path > alphabetical*
 
 Read [more about load order](http://docs.meteor.com/#/full/fileloadorder) on meteor.com.
