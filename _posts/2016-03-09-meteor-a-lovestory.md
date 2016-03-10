@@ -15,7 +15,7 @@ Meteor.js is very well [documented](http://docs.meteor.com/#/full/) and has a hu
 
 ## Installation
 
-First things first: You need [nodejs](http://lmgtfy.com/?q=install+node.js) - yolo.
+First things first: You need [Nodejs](http://lmgtfy.com/?q=install+node.js) - yolo.
 
 ```sh
 curl https://install.meteor.com/ | sh
