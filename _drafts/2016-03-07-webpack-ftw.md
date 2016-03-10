@@ -5,7 +5,7 @@ updated: 2016-03-07 23:00
 
 [![shipping a frontend](/assets/webpack-ftw/cover.png)](https://speakerdeck.com/k9ordon/webpack-ftw)
 
-simple steps for shipping a frontend with webpack - [show slides](https://speakerdeck.com/k9ordon/webpack-ftw)
+simple steps for shipping a frontend with webpack - [yadda, yadda ... take me to the slides](https://speakerdeck.com/k9ordon/webpack-ftw)
 
 ## setup
 
