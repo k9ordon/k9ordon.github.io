@@ -5,13 +5,15 @@ google_verify:      epFgX0s_0RM3CdjwFcsewfXzPov2g8s9ZBOLyaIUH-o # Put your Googl
 google_analytics:   UA-42261707-2 # Put your Google Analytics code
 
 # Author Info
-author_name:        "Klemens Gordon"
-author_email:       gordon@k94n.com
-author_gravatar:    fdbc79cc36eae90eda5f23935eca0b35 # Gravatar md5 hash
-twitter_username:   thisisgordon
-github_username:    k9ordon
+author:
+    name:           "Klemens Gordon"
+    email:          gordon@k94n.com
+    gravatar:       fdbc79cc36eae90eda5f23935eca0b35
+    twitter:        thisisgordon
+    github:         k9ordon
 
 # Site Settings
+url:                "https://k94n.com" # used in feeds
 baseurl:            "" # Base URL must end WITHOUT a slash, default: ""
 permalink:          /:title # Post permalink
 timezone:           Europe/Vienna # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -28,6 +30,7 @@ sass:
     style:          :compressed
 gems:
   - jemoji
+  - jekyll-feed
 
 # Other Params
 include:            [ "robots.txt" ]
