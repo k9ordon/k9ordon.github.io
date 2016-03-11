@@ -4,8 +4,8 @@ updated: 2016-03-09 23:00
 tweet: 708063278568710144
 ---
 
-Meteor.js is a **full stack javascript framework** for building modern web applications on a unified javascript stack (MongoDB, Node.js, Browser). If you want to build application fast, it's definitely the way to go.
-This article provides a rough overview of some selected concepts and techniques that I am using for side projects.
+Meteor.js is a **full stack javascript framework** for building modern web applications on a unified javascript stack (MongoDB, Node.js, Browser). If you want to build applications fast, it's definitely the way to go.
+This article provides a rough overview of some selected concepts and techniques that I use for side projects.
 
 Some key benefits of Meteor.js are:
 
@@ -58,7 +58,7 @@ Meteor.js' in-house template engine is called **blaze**. It's declarative, simpl
 
 > „Blaze fulfills the same purpose as Angular, Backbone, Ember, React, Polymer, or Knockout, but is much easier to use.“
 
-Its also possible to switch the engine to [react.js](https://www.meteor.com/tutorials/react/creating-an-app) or [angular.js](https://www.meteor.com/tutorials/angular/creating-an-app).
+It's also possible to switch the engine to [react.js](https://www.meteor.com/tutorials/react/creating-an-app) or [angular.js](https://www.meteor.com/tutorials/angular/creating-an-app).
 
 Example template from app boilerplate:
 {% raw %}
@@ -224,4 +224,4 @@ Uses phantom.js to serve a „spiderable“ static version of your javascript ap
 
 ## Final words
 
-I :green_heart: Meteor.js for getting non-funky stuff out of the way. You can build fast and modern stuff very efficiently. And focus on the more refined stuff in later iterations.
+I :green_heart: Meteor.js for getting non-funky stuff out of the way. You can build fast and modern stuff very efficiently and focus on the more refined stuff in later iterations.
