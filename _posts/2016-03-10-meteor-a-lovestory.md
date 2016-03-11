@@ -111,7 +111,7 @@ Add a less file and it’s processed before publishing. Source map support, a wa
 
 ## Deploying :open_mouth:
 
-After 5 minutes of sophisticated hacking it's time to deploy our web application. From my experience, this is the part where the beer comes in. Searching for a poster, setting up Linux, installing a web server, configuring databases … :beer:
+After 5 minutes of sophisticated hacking, it's time to deploy our web application. From my experience, this is the part where the beer comes in. Searching for a poster, setting up Linux, installing a web server, configuring databases … :beer:
 As I mentioned in the very first paragraph, Meteor.js is about rapid prototyping. So forget all the beers stuff about configuration and installing apt stuff. We do it the Meteor.js way:
 
 ```sh
@@ -138,9 +138,9 @@ This will fire up the iOS simulator from Xcode and boots your app in a PhoneGap 
 
 Meteor.js' persistent data layer is MongoDB with some more magic.
 
-Data fetching is done with [DDP](https://www.meteor.com/ddp) (Distributed Data Protocol). Just remember its **REST for Websockets**. Everything in Meteor.js is realtime by default, which is done by livequery a live database connector for Mongo (theoretically also MySQL #wtf). From a very high perspective: You execute a query, receive the result and all subsequent changes to this very query via web socket. :raised_hands:
+Data fetching is done with [DDP](https://www.meteor.com/ddp) (Distributed Data Protocol). Just remember its **REST for Websockets**. Everything in Meteor.js is real-time by default, which is done by livequery a live database connector for Mongo (theoretically also MySQL #wtf). From a very high perspective: You execute a query, receive the result and all subsequent changes to this very query via web socket. :raised_hands:
 
-Meteor.js also feels fast because of a concept called **Optimistic UI**. All the data that is transferred between MongoDB and clients, gets cached in a minimongo. If a template gets rendered it instantly renders with data from minimongo and then updates with data from MongoDB.
+Meteor.js also feels fast because of a concept called **Optimistic UI**. All the data that is transferred between MongoDB and clients gets cached in a minimongo. If a template gets rendered it instantly renders with data from minimongo and then updates with data from MongoDB.
 
 Enough theory - now some code. Somewhere in your global scope:
 
@@ -195,7 +195,7 @@ Router.route('/', function () {
 
 ## „We need user accounts“
 
-Implementing authentication using ember.js or other client frameworks is really a pain. Drawing a login button in your mockups, implementation for the client, a backend service that does the user logic, session handling, emailing … yadda yadda yadda. As Metero.js is a full stack framework **Meteor.js packages are also full stack**.
+Implementing authentication using ember.js or similar client frameworks can be really time-consuming: Implementation for the client, a backend service that does the user logic, session handling, emailing … yadda yadda yadda. As Metero.js is a full stack framework **Meteor.js packages are also full stack**.
 
 So let's point you to the fast lane:
 
