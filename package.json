@@ -1,0 +1,23 @@
+{
+    "name": "k9ordon.github.io",
+    "version": "1.0.0",
+    "description": "yolo!!!",
+    "main": "index.js",
+    "scripts": {
+        "uncss": "jekyll build && node build.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/k9ordon/k9ordon.github.io.git"
+    },
+    "author": "k9ordon",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/k9ordon/k9ordon.github.io/issues"
+    },
+    "homepage": "https://github.com/k9ordon/k9ordon.github.io#readme",
+    "dependencies": {
+        "glob": "^7.0.3",
+        "uncss": "^0.13.0"
+    }
+}
