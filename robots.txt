@@ -2,7 +2,8 @@
 layout: null
 ---
 
-sitemap: {{ site.baseurl | replace: 'https', 'http' | append: '/sitemap.xml' }}
+User-agent: *
+Allow: /
 
 user-agent: EmailCollector
 disallow: /
