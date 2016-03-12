@@ -21,10 +21,15 @@
 
 <link rel="icon" href="{{ site.baseurl }}/assets/favicon.png">
 <link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/touch-icon.png">
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/core.css">
-<link rel="canonical" href="{{ page.url | prepend: site.baseurl }}">
 
 {% feed_meta %}
+
+<style type="text/css">
+	{% capture include_to_scssify %}
+	      {% include critical.scss %}
+	{% endcapture %}
+	{{ include_to_scssify | scssify }}
+</style>
 
 {% if jekyll.environment == 'production' %}
 
