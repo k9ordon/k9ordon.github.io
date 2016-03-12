@@ -42,6 +42,9 @@ compress_html:
     ingore:
         envs:       [ "test" ]
 
+emoji:
+  src: "/assets"
+
 defaults:
   -
     scope:
