@@ -16,13 +16,7 @@ layout: compress
 			{{ content | replace: '&#8617;', '&#8617;&#xfe0e;' }}
 		</main>
 
-		<script>
-			var lecss = document.createElement("link");
-            lecss.setAttribute("rel", "stylesheet");
-            lecss.setAttribute("type", "text/css");
-            lecss.setAttribute("href", "{{ site.baseurl }}/assets/non-critical.css?{{ site.time | date: '%s' }}");
-			document.getElementsByTagName("head")[0].appendChild(lecss)
-		</script>
+		<link rel="stylesheet" href="{{ site.baseurl }}/assets/non-critical.css?{{ site.time | date: '%s' }}">
 	</body>
 
 </html>
