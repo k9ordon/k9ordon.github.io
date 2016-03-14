@@ -1,25 +1,27 @@
 ---
 title: Vanilla.js - Iterating a NodeList
-updated: 2016-03-14 23:00
+updated: 2016-03-14 23:45
 ---
 
 This article is about iterating a NodeList in plain javascript - a very common pitfall for developers with a jQuery background.
-
-## Why?
 
 > You Probably Don't Need jQuery To Estimate Pi
 
 We ditched jQuery years ago. First reason for this was load time. We archived rewriting the whole application in the size of the previous autocomplete plugin. So this was a huge win for page performance.
 
-Second was jQuery always feels like training wheels for the bare bone javascript. Query the dom? Need jQuery. Read input field value? Need jQuery. Hide element? Need jQuery. See the pattern? You need jQuery. People learned there is a plugin for everything and everything was a plugin. No one was aware of what's going on in their „native“ code :japanese_ogre: It just works (… if you include 5 different jQuery versions). Some clever guys did the unbelievable assumption that [YOU MIGHT NOT NEED JQUERY](http://youmightnotneedjquery.com/)!
+Second was jQuery always feels like training wheels for the bare bone javascript. It tries to builds a solution for everything you got problems with. Query the dom? Need jQuery. Read input field value? Need jQuery. Hide element? Need jQuery. See the pattern? You need jQuery. For all the simple things javascript can do and lose control of what's going on in the „native“ :japanese_ogre: code.
+
+Some clever guys did the unbelievable assumption that [YOU MIGHT NOT NEED JQUERY](http://youmightnotneedjquery.com/)! [Do You Really Need jQuery](http://www.sitepoint.com/do-you-really-need-jquery/)? [You Don't Need jQuery](http://blog.garstasio.com/you-dont-need-jquery/)!
 
 A word on the pre-ie8-era:
 
 > Some developers believe that jQuery is protecting us from a great demon of browser incompatibility when, in truth, post-IE8, browsers are pretty easy to deal with on their own.
 
-Back to now. In 2016, we are happy to set browser-support to barely anything below latest two versions. jQuery **nearly** lost all of its incompatibility voodoo magic. Welcome to brave new interwebz.
+Back to now. In 2016, we are happy to set browser-support to barely anything below latest two versions. jQuery **nearly** lost all of its incompatibility voodoo magic.
 
-## Iterating a NodeList
+This is how to ... :tada:
+
+## Iterate over a NodeList
 
 A node list is a collection of dom nodes. Most people think NodeLists are arrays like ```[<div>, <div>, <div>]```. Well almost.
 
@@ -43,16 +45,19 @@ $nodes.each(function(i, $el){
 
 You are using jQuery not browser apis. :goberserk:
 
+~~```$ = function(y) { return document.querySelectorAll(y) };```~~
+
 In [vanilla.js](/assets/vanilla.js) there are some ways to archive this:
 
-### Good old for
+### Good ol' for
 
 This is robust. Do it! :thumbsup:
 
 ```js
-var nodes = document.querySelectorAll('div');
+var nodes = document.querySelectorAll('div'),
+    i;
 
-for (var i = 0; i < nodes.length; i++) {
+for (i = 0; i < nodes.length; i++) {
     var $el = nodes[i];
     console.log($el.tagName); // => (3) DIV
 }
