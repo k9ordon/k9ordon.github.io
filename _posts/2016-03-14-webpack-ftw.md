@@ -162,6 +162,5 @@ NODE_ENV=production webpack --config webpack.config.js -p
 
 **Webpack adds 243B for runtime plus 20B per module or 4B per dependency.** :flushed: Amazingly small. Here is a [comparison](https://webpack.github.io/docs/comparison.html) of other bundlers.
 
-## Slides
 
-<script async class="speakerdeck-embed" data-id="0068e8a9c2a6461f81bdb835fb0ee40a" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+- [Slides on speakerdeck](https://speakerdeck.com/k9ordon/webpack-ftw)
