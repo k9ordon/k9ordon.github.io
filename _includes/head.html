@@ -33,12 +33,11 @@
 	{{ include_to_scssify | scssify }}
 </style>
 
-{% if jekyll.environment == 'production' %}
+<script src="{{ site.baseurl }}/assets/main.js" async></script>
 
-	<script src="{{ site.baseurl }}/assets/ga-lite.min.js" async></script>
+{% if jekyll.environment == 'production' %}
 	<script>
 	var galite = galite || {};
 	galite.UA = '{{ site.google_analytics }}'; // Insert your tracking code here
 	</script>
-
 {% endif %}
