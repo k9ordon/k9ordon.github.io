@@ -1,6 +1,7 @@
 ---
 title: Webpack FTW!!!!
 updated: 2016-03-14 12:00
+tweet: 709360990924701696
 ---
 
 This post covers the code examples from my talk „[Webpack FTW- shipping a frontend](https://speakerdeck.com/k9ordon/webpack-ftw)“. It should help you understand what webpack is capable of.
