@@ -12,7 +12,7 @@ First I evaluated **browserify**. It does exactly what I was searching for: Bund
 
 Next up was webpack. It instantly got me with its [start page](https://webpack.github.io/):
 
-![webpack start page: what is webpack?](https://raw.githubusercontent.com/webpack/webpack.github.com/54e36e6fd7934b3bf91eb6d1ef5be09f1d8631b4/assets/what-is-webpack.png)
+![webpack start page: what is webpack?](/assets/webpack-ftw/what-is-webpack.png)
 
 > „Every static asset should be able to be a module“ :ok_hand:
 
