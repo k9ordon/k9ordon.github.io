@@ -1,6 +1,6 @@
 ---
 title: Vanilla.js - Iterating a NodeList
-updated: 2016-03-14 23:45
+updated: 2016-03-15 00:50
 ---
 
 This article is about iterating a NodeList in plain javascript - a very common pitfall for developers with a jQuery background.
@@ -9,7 +9,7 @@ This article is about iterating a NodeList in plain javascript - a very common p
 
 We ditched jQuery years ago. First reason for this was load time. We archived rewriting the whole application in the size of the previous autocomplete plugin. So this was a huge win for page performance.
 
-Second was jQuery always feels like training wheels for the bare bone javascript. It tries to builds a solution for everything you got problems with. Query the dom? Need jQuery. Read input field value? Need jQuery. Hide element? Need jQuery. See the pattern? You need jQuery. For all the simple things javascript can do and lose control of what's going on in the „native“ :japanese_ogre: code.
+Second was jQuery always feels like training wheels for the bare bone javascript. It tries to builds a solution for everything you got problems with. Query the dom? Need jQuery. Read input field value? Need jQuery. Hide element? Need jQuery. See the pattern? You need jQuery. For all the simple things javascript can do. And you lose control of what's going on in the „native“ :japanese_ogre: code.
 
 Some clever guys did the unbelievable assumption that [YOU MIGHT NOT NEED JQUERY](http://youmightnotneedjquery.com/)! [Do You Really Need jQuery](http://www.sitepoint.com/do-you-really-need-jquery/)? [You Don't Need jQuery](http://blog.garstasio.com/you-dont-need-jquery/)!
 
