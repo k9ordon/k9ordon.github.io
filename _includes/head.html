@@ -35,18 +35,6 @@
 
 <script src="{{ site.baseurl }}/assets/main.js" async></script>
 
-<script>
-var cb = function() {
-    var l = document.createElement('link'); l.rel = 'stylesheet';
-    l.href = '{{ site.baseurl }}/assets/non-critical.css?{{ site.time | date: '%s' }}';
-    var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
-};
-var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-    webkitRequestAnimationFrame || msRequestAnimationFrame;
-if (raf) raf(cb);
-else window.addEventListener('load', cb);
-</script>
-
 {% if jekyll.environment == 'production' %}
 	<script>
 	var galite = galite || {};
