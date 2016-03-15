@@ -31,7 +31,7 @@ module.exports = function(grunt) {
         imagemin: {
             gemoji: {
                 options: {
-                    optimizationLevel: 7
+                    optimizationLevel: 5
                 },
                 files: [{
                     expand: true,
@@ -42,7 +42,7 @@ module.exports = function(grunt) {
             },
             images: {
                 options: {
-                    optimizationLevel: 4
+                    optimizationLevel: 5
                 },
                 files: [{
                     expand: true,
