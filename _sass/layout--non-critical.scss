@@ -1,0 +1,16 @@
+@keyframes logoBackgroundScroll {
+    from {
+        background-position: center 0;
+        // background-size: 40%;
+    }
+    to {
+        background-position: center -225px;
+        // background-size: 40%;
+    }
+}
+
+.logo {
+    background-image: url("/assets/bg-min.jpg");
+    background-position: center center;
+    animation: logoBackgroundScroll 15s linear infinite;
+}

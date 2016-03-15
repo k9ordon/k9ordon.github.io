@@ -33,17 +33,6 @@ a {
   }
 }
 
-@keyframes logoBackgroundScroll {
-    from {
-        background-position: center 0;
-        // background-size: 40%;
-    }
-    to {
-        background-position: center -225px;
-        // background-size: 40%;
-    }
-}
-
 @keyframes bounce {
   0% {
     transform: translate3d( 0, -1000px, 0 );
@@ -70,8 +59,7 @@ a {
   margin: 0 auto;
   height:200px;
 
-    background: #BADDF3 url("/assets/bg-min.jpg") center center;
-    animation: logoBackgroundScroll 15s linear infinite;
+    background-color: #BADDF3;
 
   position: relative;
 
@@ -192,6 +180,11 @@ h1.title {
   text-align: center;
   -webkit-margin-before: 0.83em;
   -webkit-margin-after: 0.83em;
+}
+
+article {
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 section {
