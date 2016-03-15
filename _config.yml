@@ -35,7 +35,7 @@ gems:
 
 # Other Params
 include:            [ "robots.txt" ]
-exclude:            [ "LICENSE", "README.md", "CNAME", "vendor", "Gemfile" ]
+exclude:            [ "LICENSE", "README.md", "CNAME", "vendor", "Gemfile", "node_modules", "bower_components" ]
 
 compress_html:
     clippings:      all
@@ -43,7 +43,7 @@ compress_html:
         envs:       [ "test" ]
 
 emoji:
-  src: "/assets"
+  src: "/assets/build"
 
 defaults:
   -

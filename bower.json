@@ -1,0 +1,25 @@
+{
+  "name": "k9ordon.github.io",
+  "description": "yolo!!!",
+  "main": "index.js",
+  "authors": [
+    "k9ordon"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/k9ordon/k9ordon.github.io",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ga-lite": "jehna/ga-lite#~1.0.1",
+    "vanilla-lazyload": "~1.5.8",
+    "gemoji": "github/gemoji#~2.1.0",
+    "loadcss": "~1.2.0"
+  }
+}

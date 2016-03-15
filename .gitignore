@@ -1,3 +1,7 @@
+# pkg mngs
+node_modules
+bower_components
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
@@ -43,4 +47,3 @@ Temporary Items
 .apdisk
 _site
 .sass-cache
-node_modules

@@ -4,7 +4,9 @@
   "description": "yolo!!!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "bower install && grunt && jekyll build",
+    "start": "jekyll serve",
+    "write": "jekyll serve --drafts"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,13 @@
   "bugs": {
     "url": "https://github.com/k9ordon/k9ordon.github.io/issues"
   },
-  "homepage": "https://github.com/k9ordon/k9ordon.github.io#readme"
+  "homepage": "https://github.com/k9ordon/k9ordon.github.io#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.0",
+    "grunt-contrib-imagemin": "^1.0.0",
+    "grunt-contrib-uglify": "^1.0.0",
+    "time-grunt": "^1.3.0"
+  }
 }

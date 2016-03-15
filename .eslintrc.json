@@ -1,0 +1,30 @@
+{
+    "rules": {
+        "indent": [
+            2,
+            4
+        ],
+        "linebreak-style": [
+            2,
+            "unix"
+        ],
+        "semi": [
+            2,
+            "always"
+        ],
+        "no-console": [
+            1
+        ]
+    },
+    "globals": {
+        "ready": true,
+        "LazyLoad": true,
+        "loadCSS": true
+    },
+    "env": {
+        "es6": false,
+        "browser": true,
+        "commonjs": true
+    },
+    "extends": "eslint:recommended"
+}
