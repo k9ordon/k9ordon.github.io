@@ -4,4 +4,5 @@
 {% capture content %}
     {{ content | replace: "img src=", "img data-original=" }}
 {% endcapture %}
-{{ content | replace: 'src="/assets/emoji', 'data-original="/assets/emoji'}}
+
+{{ content | replace: 'src="/assets/build/emoji', 'data-original="/assets/build/emoji'}}
