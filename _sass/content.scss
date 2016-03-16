@@ -26,15 +26,31 @@ article {
 }
 
 .action {
-    padding:20px 0;
+    // margin:0;
     text-align: center;
 
-    .block {
-        display:block;
-        padding:20px;
+    &-block {
+        display: inline-block;
+        // padding: 4px 40px;
+        text-align: center;
+        // font-size: 18px;
+        background:#fff;
+        width:120px;
+        padding: 0 0 15px 0;
 
-        @media (min-width: 992px) {
-            // display:inline-block;
+        // @media (min-width: 992px) {
+        //     display:inline-block;
+        // }
+
+        .emoji { // break bam because gemoji
+            margin: 15px auto;
+            display: block;
         }
     }
+
+    &-link {
+        display:inline-block;
+    }
+
+
 }
