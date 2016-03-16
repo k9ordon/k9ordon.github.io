@@ -114,4 +114,4 @@ console.log(nodes.length); // => 2
 console.log(nodesnotlive.length); // => 1
 ```
 
-:v:
+<center>:v:</center>

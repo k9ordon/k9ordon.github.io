@@ -12,7 +12,7 @@ First I evaluated **browserify**. It does exactly what I was searching for: Bund
 
 Next up was webpack. It instantly got me with its [start page](https://webpack.github.io/):
 
-![webpack start page: what is webpack?](/assets/webpack-ftw/what-is-webpack.png)
+![webpack start page: what is webpack?](/assets/build/webpack-ftw/what-is-webpack.png)
 
 > „Every static asset should be able to be a module“ :ok_hand:
 
@@ -32,7 +32,7 @@ npm install webpack-dev-server -g
 
 As this was a talk with fancy slides here are some in-ur-face-images to visualize what's happening:
 
-![](/assets/webpack-ftw/1.png)
+![](/assets/build/webpack-ftw/1.png)
 
 First we just do a simple webpack bundle with some dependencies. Check out the [example code](https://github.com/k9ordon/webpack-ftw/tree/master/1-bundle).
 Then we run webpack for bundling all out requirements from entry.js to bundle.js.
@@ -46,7 +46,7 @@ This almost the same what the browserify cli does.
 
 ## The CSS thing
 
-![](/assets/webpack-ftw/2.png)
+![](/assets/build/webpack-ftw/2.png)
 
 Next we add CSS the build. We need a loader to process the CSS.
 
@@ -62,7 +62,7 @@ In this example, CSS is shipped with the bundled js files. Its also possible to 
 
 ## Loaders & Config
 
-![](/assets/webpack-ftw/3.png)
+![](/assets/build/webpack-ftw/3.png)
 
 Loaders are some kind of pre-processing. There is a [huge list of loaders](http://webpack.github.io/docs/list-of-loaders.html) available. In this example, we preprocess es6 with babel. So let's install the babel-loader and babel.
 
@@ -106,7 +106,7 @@ webpack --config webpack.config.js
 
 ## Code Splitting
 
-![](/assets/webpack-ftw/4.png)
+![](/assets/build/webpack-ftw/4.png)
 
 In this part webpack will split our code into 2 entry chunks and share code as commons.js.     [Example Code](https://github.com/k9ordon/webpack-ftw/tree/master/4-codesplitting)
 
