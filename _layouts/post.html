@@ -34,6 +34,12 @@ layout: default
         </a>
     </li>
 
+    <li class="action-block">
+        <a class="action-link" href="{{site.mailchimp.subscribe}}">
+            <img class="emoji" src="/assets/build/emoji/unicode/1f425.png" height="20" width="20" align="absmiddle"> Subscribe
+        </a>
+    </li>
+
     {% if page.tweet %}
 
     <li class="action-block">
@@ -43,13 +49,6 @@ layout: default
     </li>
 
     {% endif %}
-
-    <li class="action-block">
-        <a class="action-link" href="{{site.mailchimp.subscribe}}">
-            <img class="emoji" src="/assets/build/emoji/unicode/1f425.png" height="20" width="20" align="absmiddle"> Subscribe
-        </a>
-    </li>
-
 
     <li class="action-block action-block--fullwidth">
         <a class="action-link" href="{{ site.related_posts[0].url }}">

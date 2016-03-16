@@ -26,13 +26,17 @@ article {
     max-width: 500px;
     margin: 40px auto;
     text-align: center;
+
     &-block {
         display: inline-block;
-        // padding: 4px 40px;
         text-align: center;
+        overflow: hidden;
+        // padding: 4px 40px;
         // font-size: 18px;
         background: #fff;
-        width: 120px;
+        // width:50%;
+        width:150px;
+        // min-width: 90px;
         padding: 0 0 15px;
         // @media (min-width: 992px) {
         //     display:inline-block;
@@ -40,17 +44,19 @@ article {
         &--fullwidth {
             width: 100%;
         }
-        .emoji {
-            // break bam because gemoji
-            margin: 15px auto;
-            display: block;
-        }
     }
     &-link {
         display: inline-block;
         white-space: nowrap;
-        overflow: hidden;
+        // overflow: hidden;
         text-overflow: ellipsis;
         max-width: 100%;
+    }
+    .emoji {
+        // break bam because gemoji
+        margin: 15px auto;
+        display: block;
+        // width: 30px!important;
+        // height: 30px!important;
     }
 }
