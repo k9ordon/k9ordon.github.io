@@ -29,26 +29,33 @@ module.exports = function(grunt) {
             }
         },
         imagemin: {
-            gemoji: {
-                options: {
-                    optimizationLevel: 7
-                },
-                files: [{
-                    expand: true,
-                    cwd: 'bower_components/gemoji/images/emoji/',
-                    src: ['**/*.{png,jpg,gif}'],
-                    dest: 'assets/build/emoji/'
-                }]
-            },
             images: {
                 options: {
-                    optimizationLevel: 7
+                    optimizationLevel: 3
                 },
                 files: [{
                     expand: true,
                     cwd: '_images/',
                     src: ['**/*.{png,jpg,gif}'],
                     dest: 'assets/build/'
+                }]
+            }
+        },
+        pngmin: {
+            gemoji: {
+                options: {
+                    concurrency: 8, // specify how many exucutables get spawned in parallel
+                    colors: 128, // reduce colors to 128
+                    ext: '.png', // use .png as extension for the optimized files
+                    quality: '55-80', // output quality should be between 65 and 80 like jpeg quality
+                    speed: 10, // pngquant should be as fast as possible
+                    iebug: false // optimize image for use in Internet Explorer 6
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'bower_components/gemoji/images/emoji/',
+                    src: ['**/*.{png,jpg,gif}'],
+                    dest: 'assets/build/emoji/'
                 }]
             }
         }
@@ -58,10 +65,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-pngmin');
 
     grunt.registerTask('js', ['clean:js', 'uglify:js']);
     grunt.registerTask('images', ['clean:images', 'imagemin:images']);
-    grunt.registerTask('gemoji', ['clean:gemoji', 'imagemin:gemoji']);
+    grunt.registerTask('gemoji', ['clean:gemoji', 'pngmin:gemoji']);
+
 
     grunt.registerTask('all', ['js', 'images', 'gemoji']);
 
