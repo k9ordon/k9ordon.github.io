@@ -24,3 +24,17 @@ article {
 
   }
 }
+
+.action {
+    padding:20px 0;
+    text-align: center;
+
+    .block {
+        display:block;
+        padding:20px;
+
+        @media (min-width: 992px) {
+            // display:inline-block;
+        }
+    }
+}

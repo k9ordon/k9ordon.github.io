@@ -45,6 +45,9 @@ compress_html:
 emoji:
   src: "/assets/build"
 
+mailchimp:
+  subscribe: http://eepurl.com/bUpV-1
+
 defaults:
   -
     scope:

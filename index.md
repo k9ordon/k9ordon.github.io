@@ -34,3 +34,11 @@ layout: default
 
 	</ul>
 </section>
+
+
+<div class="action">
+    <div class="block">
+        :hatched_chick:
+		<a href="{{site.mailchimp.subscribe}}">Subscribe to Posts</a>
+	</div>
+</div>

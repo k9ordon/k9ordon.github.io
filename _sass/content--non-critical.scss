@@ -86,20 +86,3 @@ article {
 
   }
 }
-
-.action {
-    margin:40px 0;
-    text-align: center;
-
-    .block {
-        display:block;
-        margin:10px;
-
-        @media (min-width: 992px) {
-            display:inline-block;
-        }
-    }
-    .middle {
-        margin:20px;
-    }
-}
