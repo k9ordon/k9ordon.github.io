@@ -39,6 +39,6 @@ layout: default
 <div class="action">
     <div class="block">
         :hatched_chick:
-		<a href="{{site.mailchimp.subscribe}}">Subscribe to Posts</a>
+		<a href="{{site.mailchimp.subscribe}}">Subscribe</a>
 	</div>
 </div>
