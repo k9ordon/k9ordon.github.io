@@ -40,13 +40,6 @@ layout: default
 <ul class="action">
 
     <li class="action-block">
-        <a class="action-link" href="{{ site.related_posts[0].url }}/">
-            <img class="emoji" title=":open_hands:" alt=":open_hands:" src="/assets/build/emoji/unicode/1f648.png" height="20" width="20" align="absmiddle">
-            Random
-        </a>
-    </li>
-
-    <li class="action-block">
         <a class="action-link" href="{{site.mailchimp.subscribe}}">
             :hatched_chick: Subscribe
         </a>
