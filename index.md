@@ -2,9 +2,9 @@
 layout: default
 ---
 
-<section>
+<section itemscope="" itemtype="http://schema.org/Blog">
 
-    <h1 class="title">{{site.title}}</h1>
+    <h1 class="title" itemprop="name">{{site.title}}</h1>
 
     <p class="description">
         {{ site.description | replace: 'love', ":heart:" }} <a href="/about">more</a>
@@ -12,20 +12,18 @@ layout: default
 
     <div class="divider"></div>
 
-</section>
-
-<section>
-
     <ul>
 
         {% for post in site.posts %}
 
-        <li>
-            <div class="post-date">
-                <span>{{ post.date | date: "%b %d, %Y" }}</span>
+        <li itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
+            <div class="post-date" itemprop="datePublished" datetime="{{ post.date | date_to_xmlschema }}">
+                <span>
+                    {{ post.date | date: "%b %d, %Y" }}
+                </span>
             </div>
-            <div class="title">
-                <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            <div class="title" itemprop="name">
+                <a href="{{ post.url | prepend: site.baseurl }}" itemprop="url">{{ post.title }}</a>
             </div>
         </li>
 

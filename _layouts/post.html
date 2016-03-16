@@ -2,11 +2,11 @@
 layout: default
 ---
 
-<article>
+<article itemtype="http://schema.org/BlogPosting">
 
     <div class="center">
-        <h1>{{ page.title }}</h1>
-        <time>{{ page.date | date: '%B %-d, %Y' }}</time>
+        <h1 itemprop="name">{{ page.title }}</h1>
+        <time itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time>
         <span class="readtime">
 			{% capture read_time %}
 			  {{ page.content | number_of_words | divided_by: 180 }}
@@ -22,7 +22,9 @@ layout: default
 
     <div class="divider"></div>
 
-    {{ content }}
+    <div itemprop="articleBody">
+        {{ content }}
+    </div>
 
 </article>
 
