@@ -1,17 +1,17 @@
 ---
-title: ES6 - Module Singleton Pattern
+title: ES6 Modules - Single Instance Pattern
 updated: 2016-03-19 23:00
 tags: ES6
 ---
 
-In this post, we will create a singleton in beautiful minimal vanilla es6 module syntax. Singletons are useful for single instance modules without polluting the global space -  ```window```. Our singleton instance can easily be imported with es6 module syntax.  Additionally, your classes can be exported for being used in a higher level of the class chain.
+In this post, we will create a singleton like class in beautiful minimal vanilla es6 module syntax. Singletons are useful for single instance modules without polluting the global space (```window```, ...). Our singleton like instance can easily be exported with es6 module syntax.  Additionally, classes can be used in a higher level of the class chain.
 
-> The singleton pattern is a design pattern that restricts the instantiation of a class to one object. This is useful when exactly one object is needed to coordinate actions across the system.
+> The singleton pattern is a design pattern that restricts the instantiation of a class to one object. This is useful when exactly one object is needed to coordinate actions across the system.  [Wikipedia](https://en.wikipedia.org/wiki/Singleton_pattern)
 
 This example shows:
 
-- a **main-module** containing one **child-module**
-- Both of them share a **notification broker** instance
+- A **main module** containing one **child module**
+- Both of them share a single **notification broker** instance
 
 You can grab a [copy of the code at github](https://github.com/k9ordon/es6-module-singleton) or [webpackbin](http://www.webpackbin.com/NJdpRL8px).
 
@@ -124,7 +124,7 @@ When we let webpack bundle and execute all of this in browser we get the followi
 <p>4 - yolo 2 from main</p>
 ```
 
-The up counting total count shows that notifications instance is a singleton. :metal:
+The up counting total count shows that notifications instance is unique. :metal:
 
 ## Once again the pattern
 
@@ -164,7 +164,7 @@ export let transformerYolo = new TransformerYolo();
 
 > Singleton pattern restricts object creation for a class to only one instance.
 
-So if you ```import { Notifications, notifications } from "./notifications.js“;``` and ```new Notifications()``` you get another instance of Notifications class. You are not restricted from creating an instantiation of the class. If this is a problem you can simply **not** export the class. :nail_care:
+So if you ```import { Notifications, notifications } from "./notifications.js“;``` and ```new Notifications()``` you get another instance of Notifications class. You are not restricted from creating an instantiation of the class. If this is a problem you can get the restriction by simply **not** export the class. :nail_care:
 
 - You can get a working example of this code at [webpackbin.com](http://www.webpackbin.com/NJdpRL8px)
 - [Repository with example code](https://github.com/k9ordon/es6-module-singleton) on GitHub
