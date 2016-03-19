@@ -1,0 +1,170 @@
+---
+title: ES6 - Module Singleton Pattern
+updated: 2016-03-19 23:00
+tags: ES6
+---
+
+In this post, we will create a singleton in beautiful minimal vanilla es6 module syntax. Singletons are useful for single instance modules without polluting the global space -  ```window```. Our singleton instance can easily be imported with es6 module syntax.  Additionally, your classes can be exported for being used in a higher level of the class chain.
+
+> The singleton pattern is a design pattern that restricts the instantiation of a class to one object. This is useful when exactly one object is needed to coordinate actions across the system.
+
+This example shows:
+
+- a **main-module** containing one **child-module**
+- Both of them share a **notification broker** instance
+
+You can grab a [copy of the code at github](https://github.com/k9ordon/es6-module-singleton) or [webpackbin](http://www.webpackbin.com/NJdpRL8px).
+
+I use webpack and babel-es2015 to run this example.
+
+```sh
+npm install webpack babel-loader babel-preset-es2015
+```
+
+## Notifications Class
+
+First, we create a quite basic notifications class in ```notifications.js```. The constructor creates a message array. This will hold all our messages for later usage (like showing message count in a UI). The second method (```add(message)```) just pushes a given message to the messages array.
+
+```js
+// notifications.js
+export class Notifications {
+
+  constructor() {
+    this.messages = [];
+  }
+
+  add(message) {
+    this.messages.push(message);
+  }
+}
+```
+
+For debugging purpose, we add a document.write and console.log to the ```add``` method.
+
+```js
+add(message) {
+  this.messages.push(message);
+
+  // debug
+  document.write(`<p>${this.messages.length} - ${message}</p>`);
+  console.log('messages', this.messages);
+}
+```
+
+Everytime someone calls the ```add``` Method we get the total count of notification messages in the instance and the message body.
+
+If we ```import { Notifications } from "./notifications.js“;``` we get our Notifications class. Cool.
+
+So beside of exporting the class we also export a new instance of the Notifications class using „```let```“ to always export a single instance of notifications.
+
+```js
+export let notifications = new Notifications();
+```
+
+That's all the voodoo. **Let** used in global scope makes sure ```notifications``` is not reused. So every time we import with ```import { notifications } from "./notifications.js“;``` we get the same instance of the ```Notifications``` class.
+
+## Child-Module
+
+Our first usage of Notifications is in a Child-Module class. It imports the notifications instance as shown. When created it calls the ```add```-Method of notifications.
+
+```js
+// child.js
+import { notifications } from "./notifications.js";
+
+export class Child {
+
+  constructor(name) {
+    this.name = name;
+
+    notifications.add('yolo from ' + this.name)
+  }
+
+}
+```
+
+
+## Main-Module
+
+To bring this all together we create the main module.
+
+```js
+// main.js
+import { notifications } from "./notifications.js";
+import { Child } from "./child.js";
+
+export class Main {
+  constructor() {
+    notifications.add('yolo 1 from main');
+
+    // create new children
+    // (they call notifications.add in constructor)
+    let child1 = new Child('le child 1');
+    let child2 = new Child('le child 2');
+
+    // send second message from main
+    notifications.add('yolo 2 from main');
+  }
+}
+```
+
+Finally bootstrap on domready:
+
+```js
+document.addEventListener("DOMContentLoaded", (e) => new Main());
+```
+
+## As we run
+
+When we let webpack bundle and execute all of this in browser we get the following makeup in ```document.body```:
+
+```html
+<p>1 - yolo 1 from main</p>
+<p>2 - yolo from le child 1</p>
+<p>3 - yolo from le child 2</p>
+<p>4 - yolo 2 from main</p>
+```
+
+The up counting total count shows that notifications instance is a singleton. :metal:
+
+## Once again the pattern
+
+### create
+
+```js
+// yolo.js
+export class Yolo {}
+export let yolo = new Yolo();
+```
+
+### usage
+
+```js
+// laser.js
+import { yolo } from "./yolo.js";
+```
+
+```js
+// cat.js
+import { yolo } from "./yolo.js";
+// same yolo as in laster.js
+```
+
+### extend
+
+```js
+// transformer.js
+import { Yolo } from "./yolo.js";
+
+class TransformerYolo extends Yolo {}
+
+export let transformerYolo = new TransformerYolo();
+```
+
+## Exporting class breaks singleton pattern ?!? :scream: :flushed: :sob:
+
+> Singleton pattern restricts object creation for a class to only one instance.
+
+So if you ```import { Notifications, notifications } from "./notifications.js“;``` and ```new Notifications()``` you get another instance of Notifications class. You are not restricted from creating an instantiation of the class. If this is a problem you can simply **not** export the class. :nail_care:
+
+- You can get a working example of this code at [webpackbin.com](http://www.webpackbin.com/NJdpRL8px)
+- [Repository with example code](https://github.com/k9ordon/es6-module-singleton) on GitHub
