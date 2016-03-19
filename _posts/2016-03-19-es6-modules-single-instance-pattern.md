@@ -141,6 +141,7 @@ export let yolo = new Yolo();
 ```js
 // laser.js
 import { yolo } from "./yolo.js";
+// yolo is a single instance of Yolo class
 ```
 
 ```js
@@ -154,6 +155,7 @@ import { yolo } from "./yolo.js";
 ```js
 // transformer.js
 import { Yolo } from "./yolo.js";
+// Yolo is Yolo class
 
 class TransformerYolo extends Yolo {}
 
