@@ -13,7 +13,7 @@ This example shows:
 - A **main module** containing one **child module**
 - Both of them share a single **notification broker** instance
 
-You can grab a [copy of the code at github](https://github.com/k9ordon/es6-module-singleton) or [webpackbin](http://www.webpackbin.com/NJdpRL8px).
+You can grab a [copy of the code at github](https://github.com/k9ordon/es6-module-single-instance) or [webpackbin](http://www.webpackbin.com/NJdpRL8px).
 
 I use webpack and babel-es2015 to run this example.
 
@@ -167,4 +167,4 @@ export let transformerYolo = new TransformerYolo();
 So if you ```import { Notifications, notifications } from "./notifications.js“;``` and ```new Notifications()``` you get another instance of Notifications class. You are not restricted from creating an instantiation of the class. If this is a problem you can get the restriction by simply **not** export the class. :nail_care:
 
 - You can get a working example of this code at [webpackbin.com](http://www.webpackbin.com/NJdpRL8px)
-- [Repository with example code](https://github.com/k9ordon/es6-module-singleton) on GitHub
+- [Repository with example code](https://github.com/k9ordon/es6-module-single-instance) on GitHub
