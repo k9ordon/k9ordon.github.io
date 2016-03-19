@@ -1,6 +1,7 @@
 ---
 title: Vanilla.js - Iterating a NodeList
 updated: 2016-03-15 00:50
+tweet: 710767220146700288
 ---
 
 This article is about iterating a NodeList in plain javascript - a very common pitfall for developers with a jQuery background.
