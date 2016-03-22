@@ -21,7 +21,10 @@ article {
         }
     }
     img[src*=".giphy.com/"], img[data-original*=".giphy.com/"].loading {
-        width:100%;
+        width: calc(100% + 38px);
+        max-width: 200%;
+
+        margin:0 -19px;
         min-height:200px;
         max-height: 500px;
     }
@@ -66,6 +69,7 @@ article {
         // overflow: hidden;
         text-overflow: ellipsis;
         max-width: 100%;
+        border-color:lightgreen;
     }
     .emoji {
         // break bam because gemoji
