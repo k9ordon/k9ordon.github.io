@@ -1,12 +1,39 @@
 ---
 title: ES6 Modules - Single Instance Pattern
-updated: 2016-03-19 23:00
+updated: 2016-03-22 21:15
 tags: ES6
 ---
 
-In this post, we will create a singleton like class in beautiful minimal vanilla es6 module syntax. Singletons are useful for single instance modules without polluting the global space (```window```, ...). Our singleton like instance can easily be exported with es6 module syntax.  Additionally, classes can be used in a higher level of the class chain.
+In this post, we will create a singleton like class in beautiful minimal vanilla es6 module syntax. Singletons exports are useful for single instance modules without reading and writing to the global space (```window```, app, ...). Our singleton like instance can easily be im/exported with es6 module syntax.  Additionally, classes can be used in a higher level of the class chain if exported. The magic behind is simple: **ES6 Modules are singletons - the instance is created when module is loaded.**
 
-> The singleton pattern is a design pattern that restricts the instantiation of a class to one object. This is useful when exactly one object is needed to coordinate actions across the system.  [Wikipedia](https://en.wikipedia.org/wiki/Singleton_pattern)
+## The pattern
+
+Create your class and export an instance of it.
+
+```js
+// File: yolo.js
+
+class Yolo {}
+export let yolo = new Yolo();
+```
+
+To import the instance simply import it from your module. ES6 modules make sure it's the same instance of the class as you require somewhere else.
+
+```js
+// File: laser.js
+
+import { yolo } from "./yolo.js";
+// yolo is a single instance of Yolo class
+```
+
+```js
+// File: cat.js
+
+import { yolo } from "./yolo.js";
+// same yolo as in laster.js
+```
+
+## Example
 
 This example shows:
 
@@ -126,31 +153,7 @@ When we let webpack bundle and execute all of this in browser we get the followi
 
 The up counting total count shows that notifications instance is unique. :metal:
 
-## Once again the pattern
-
-### create
-
-```js
-// yolo.js
-export class Yolo {}
-export let yolo = new Yolo();
-```
-
-### usage
-
-```js
-// laser.js
-import { yolo } from "./yolo.js";
-// yolo is a single instance of Yolo class
-```
-
-```js
-// cat.js
-import { yolo } from "./yolo.js";
-// same yolo as in laster.js
-```
-
-### extend
+### extending
 
 ```js
 // transformer.js
