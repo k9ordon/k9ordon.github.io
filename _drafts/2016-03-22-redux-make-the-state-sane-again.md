@@ -1,6 +1,7 @@
 ---
 title: Redux.js - Make the state sane again
 updated: 2016-03-22 18:00
+category: Redux.js
 ---
 
 [Redux](http://redux.js.org/) is a framework that helps you sane your application states :heart_eyes:. It lets you write applications that behave consistently and predictable. Redux is basically a pattern for a single state container handling all your state changes by dispatching a state and later use a reducer to compute the state change. It's easy to recreate the same application state or even [timetravel](https://github.com/gaearon/redux-devtools) through state changes :sunglasses:.

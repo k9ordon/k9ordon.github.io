@@ -1,6 +1,7 @@
 ---
 title: Vanilla.js - Iterating a NodeList
 updated: 2016-03-15 00:50
+category: Vanilla.js
 tweet: 710767220146700288
 ---
 
