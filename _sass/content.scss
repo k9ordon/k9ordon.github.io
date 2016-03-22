@@ -20,6 +20,21 @@ article {
             background-repeat: no-repeat;
         }
     }
+    img[src*=".giphy.com/"], img[data-original*=".giphy.com/"].loading {
+        width:100%;
+        min-height:200px;
+        max-height: 500px;
+    }
+    img.loading {
+        height:50px;
+        width:50px;
+        background:#ececec;
+    }
+    img.loading.emoji {
+        height:20px;
+        width:20px;
+        border-radius:20px;
+    }
 }
 .action {
     // margin:0;
