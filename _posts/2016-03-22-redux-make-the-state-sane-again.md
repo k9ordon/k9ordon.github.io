@@ -50,9 +50,9 @@ npm install --save redux
 
 :guardsman: I use es6 in the example so bring your own es6.
 
-- Playground [on github](k9ordon/redux-simple-example)
+- Playground [on github](https://github.com/k9ordon/redux-simple-example)
 
-In our example, we'd like to select a list element by clicking it. Updated the according item and with an active class and show id in ```list-selectedId``` span.
+In our example, we'd like to select a list item by clicking it. The selected state will sow a border around the item.
 
 ```html
 <!-- File: index.html -->
@@ -69,7 +69,7 @@ In our example, we'd like to select a list element by clicking it. Updated the a
 </div>
 ```
 
-First things first we create our state store with the ```createStore``` function from redux. This function takes reducers as the first argument. As we heard before reducers have a single use: Take a state and return the modified state. As we have not implemented any reducers, we just create a dummy reducer returning the same state as passed in.
+First things first we create our state store with the ```createStore``` function from redux. This function takes reducers as the first argument. As we heard before reducers have a single use: **Take a state and return the modified state.** As we have not implemented any reducers, we just create a dummy reducer returning the same state as passed in.
 
 ```js
 // File: store.js
@@ -193,5 +193,5 @@ That's all. :alien:
 
 After brainfuck is over and you understand wtf you are doing - it's a very clean and consistent pattern for modifying application states.
 
-- Run my [example repo](k9ordon/redux-simple-example)
+- Run my [example repo](https://github.com/k9ordon/redux-simple-example)
 - Head over to the [official redux docs](http://redux.js.org/)!!!
