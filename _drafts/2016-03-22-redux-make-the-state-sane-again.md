@@ -9,13 +9,15 @@ Redux evolves the ideas of Flux. You can use Redux together with React, with any
 
 There are 3 main concepts to understand:
 
-- **Store** holds the state and handles subscriptions
+- **Store** holds the state and handles subscriptions. There is only 1 state store per application!
 - **Actions** are payloads of information you send to the store to trigger a change to the state. They are plain javascript objects and must have a ```type``` property
-- **Reducers** trigger on actions and actually apply the state change
+- **Reducers** trigger on actions and actually apply the change in the state
 
 ## Current state of states
 
-In current frontend applications, states and their changes are spread across everything. Sometimes CSS classes are abused to represent a states some, others are implemented in javascript variables (god beware globals). Oh and cookies. There is no way to get the whole picture.
+In current frontend applications, states, and their changes are spread across everything. Sometimes CSS classes are abused to represent a states some, others are implemented in javascript variables (god beware globals). Oh and cookies. There is no way to get the whole picture.
+
+The Redux pattern creates a layer between the state-change-trigger and the actual-action. This creates a very clear view of application states and behavior.
 
 ### User completes a Todo - example:
 
@@ -47,16 +49,17 @@ npm install --save redux
 
 :guardsman: I use es6 in the example so bring your own es6.
 
+- Playground [on github](k9ordon/redux-simple-example)
+
 In our example, we'd like to select a list element by clicking it. Updated the according item and with an active class and show id in ```list-selectedId``` span.
 
 ```html
 <!-- File: index.html -->
 
 <div class="list">
-    <p>
-        You selected:
-        <span class="list-selectedId"></span>
-    </p>
+    <h3>
+        Your list:
+    </h3>
 
     <ul class="list-wrap">
         <li class="item" data-id="123">yo</li>
@@ -85,8 +88,12 @@ Next, we define our **action**. As actions are plain JavaScript objects this mig
 export const ITEM_SELECTED = 'ITEM_SELECTED'
 
 export function item_selected(id) {
-    return { type: ITEM_SELECTED, id }
+    return {
+        type: ITEM_SELECTED,
+        id: parseInt(id)
+    }
 }
+
 ```
 
 Let's use this action by importing it (es6 ftw!).
@@ -97,12 +104,12 @@ Let's use this action by importing it (es6 ftw!).
 import { store } from './store';
 import { item_selected } from './action';
 
-var $items = this.$el.querySelectorAll('.item');
-
-$items.addEventListener('click', (e) => {
-    e.preventDefault();
-    store.dispatch(item_selected(this.id));
-});
+for (var $item of document.querySelectorAll('.item')) {
+    $item.addEventListener('click', (e) => {
+        e.preventDefault();
+        store.dispatch(item_selected(e.target.dataset.id));
+    });
+}
 ```
 
 In the click handler, we start a state change by dispatching the action object in the store. Nothing happens, except the reducers receive a dispatched action, which in our case just return the same state as before. Let's create a store which actually modifies a state.
@@ -114,11 +121,16 @@ import { ITEM_SELECTED } from './action';
 export function Item_Reducer(state = [], action) {
     switch (action.type) {
         case ITEM_SELECTED:
-            return state.Items.map((item, index) => {
-                return Object.assign({}, item, {
-                    selected: item.id === action.id ? true : false
-                });
-            });
+            var state__modified = Object.assign(state,
+                {
+                    Items: state.Items.map((item, index) => {
+                        console.log(item.id === action.id, item.id, action.id);
+                        return Object.assign(item, {
+                            selected: (item.id === action.id ? true : false)
+                        });
+                    })
+                }
+            );
         default:
             return state;
     }
@@ -137,29 +149,42 @@ So we map a function to every ```Items``` child in state and return a copy with 
 
 If we run this example again we got modified states after clicking an item.
 
-Last part we need to do is let the ui react to the state changes.
+Now we bind the reducer to our store. We replace emptyReducer with our real Item_Reducer and add an initial application state.
 
-We use find from loadash so ```npm install lodash -D```
+```js
+File:store.js
+
+import { createStore } from 'redux';
+import { Item_Reducer } from './reducer';
+
+let initialState = {
+    Items: [{ id: 123 }, { id: 234 }],
+};
+
+export let store = createStore(Item_Reducer, initialState);
+```
+
+Last part we need to do is let the UI react to the state changes. So we create an update function and add it as a store listener.
 
 ```js
 // File: main.js
 ...
-import find from "lodash/find";
-
 let update = function() {
-    for(var $item in $items) {
-        if(find(this.store.getState().Item, {"id": this.id}).selected == true)
-            this.$el.classList.add('item--selected');
-        else
-            this.$el.classList.remove('item--selected');
-    }
-}
+    for (var item of store.getState().Items) {
+        let $item = document.querySelector(`.item[data-id="${item.id}"]`);
 
-store.subscribe(() => update());
+        if(item.selected == true)
+            $item.classList.add('item--selected');
+        else
+            $item.classList.remove('item--selected');
+    }
+};
+
+store.subscribe(update);
 ...
 ```
 
-Everytime the state changed we run all functions subscribed to the store to reflect the new state in the interface.
+Every time the state changed we run all functions subscribed to the store to reflect the new state in the interface.
 
 That's all. :alien:
 
@@ -167,5 +192,5 @@ That's all. :alien:
 
 After brainfuck is over and you understand wtf you are doing - it's a very clean and consistent pattern for modifying application states.
 
-- Run my example repo
+- Run my [example repo](k9ordon/redux-simple-example)
 - Head over to the [official redux docs](http://redux.js.org/)!!!
