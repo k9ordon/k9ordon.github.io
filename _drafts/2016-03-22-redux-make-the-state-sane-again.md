@@ -1,17 +1,17 @@
 ---
-title: Redux.js - Make the state sane
+title: Redux.js - Make the state sane again
 updated: 2016-03-22 18:00
 ---
 
-Redux is a framework that helps you sane your application states :heart_eyes:. It lets you write applications that behave consistently and predictable. Redux is basically a pattern for a single state container handling all your state changes by dispatching a state and later use a reducer to compute the state change. It's easy to recreate the same application state or even [timetravel](https://github.com/gaearon/redux-devtools) through state changes :sunglasses:.
+[Redux](http://redux.js.org/) is a framework that helps you sane your application states :heart_eyes:. It lets you write applications that behave consistently and predictable. Redux is basically a pattern for a single state container handling all your state changes by dispatching a state and later use a reducer to compute the state change. It's easy to recreate the same application state or even [timetravel](https://github.com/gaearon/redux-devtools) through state changes :sunglasses:.
 
 Redux evolves the ideas of Flux. You can use Redux together with React, with anything-else.js or vanilla.js.
 
 There are 3 main concepts to understand:
 
 - **Store** holds the state and handles subscriptions
-- **Actions** are payloads of information you send to the store to trigger a change to the state. They are plain javascript objects and must have a ```type``` property.
-- **Reducers** trigger on actions and actually apply the state change.
+- **Actions** are payloads of information you send to the store to trigger a change to the state. They are plain javascript objects and must have a ```type``` property
+- **Reducers** trigger on actions and actually apply the state change
 
 ## Current state of states
 
@@ -21,16 +21,21 @@ In current frontend applications, states and their changes are spread across eve
 
 - Checkbox has **dom event handler**
 - Event handler triggers
-- **CSS class** is added
+- **CSS class** is added to event.target.parentNode
 - more spagettos
 
 ### User completes a Todo - Redux way:
 
-- Todo List **subscribes** to state changes.
+- Todo List **subscribes** to state changes
 - Checkbox has **dom event handler**
-- Event handler **dispatches** a TODO_COMPLETED action with id param.
-- Reducer for TODO_COMPLETED **modifies affected Todo state**
-- Todo List subscriber triggers update as the state is changed and renders completed Todo.
+- Event handler **dispatches** a TODO_COMPLETED action with id in param to the store
+- **Store** sends action through reducer tree
+- Reducer for TODO_COMPLETED action **modifies affected Todo state**
+- Todo List subscriber triggers update as the state is changed and **CSS class** is added
+
+![Store passing actions to reducers](http://i.giphy.com/xztgj23fvzUyI.gif)
+
+*A store passing actions to reducers.*
 
 ## Let's hack
 
@@ -123,16 +128,16 @@ export function Item_Reducer(state = [], action) {
 A Reducer function gets 2 Arguments from the store. First the current state and the action payload we created in the **action.js**. In the reducer decide mutation by ```action.type```. It's very important for to return a copy of the state. **Never modify the original state object.**
 
 > It’s very important that the reducer stays pure. Things you should never do inside a reducer:
-
-- Mutate its arguments;
-- Perform side effects like API calls and routing transitions;
-- Calling non-pure functions, e.g. Date.now() or Math.random().
+>
+> - Mutate its arguments;
+> - Perform side effects like API calls and routing transitions;
+> - Calling non-pure functions, e.g. Date.now() or Math.random().
 
 So we map a function to every ```Items``` child in state and return a copy with a patched ```{ selected: true}``` property if the item is the same as ```action.id```.
 
 If we run this example again we got modified states after clicking an item.
 
-Last part we need to do is let the interface react to the state changes.
+Last part we need to do is let the ui react to the state changes.
 
 We use find from loadash so ```npm install lodash -D```
 
