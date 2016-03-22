@@ -195,22 +195,28 @@ section {
     li {
       margin: 25px 0;
       .title {
-        max-width: 100%;
-        overflow: hidden !important;
-        text-overflow: ellipsis !important;
-        white-space: nowrap !important;
-        word-wrap: normal !important;
-        padding-bottom: 2px;
+        // @media (min-width: 992px) {
+            max-width: 100%;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+            white-space: nowrap !important;
+            word-wrap: normal !important;
+            padding-bottom: 2px;
+        // }
       }
       a {
         text-decoration: none;
         // border: 0;
         color: #000;
         box-sizing: border-box;
+        // border-color: orange;
       }
       .post-date {
-        float: right;
-        margin: 0 0 0 20px;
+          margin: 0 0 10px;
+        @media (min-width: 500px) {
+            float: right;
+            margin: 0 0 0 20px;
+        }
       }
       span {
         display: inline-block;
