@@ -16,7 +16,7 @@ There are 3 main concepts to understand:
 
 ## Current state of states
 
-In current frontend applications, states, and their changes are spread across everything. Sometimes CSS classes are abused to represent a states some, others are implemented in javascript variables (god beware globals). Oh and cookies. There is no way to get the whole picture.
+In current frontend applications, states, and their changes are spread across everything. Sometimes CSS classes are abused to represent a states, some others are implemented in javascript variables (god beware global ```window```). Oh and cookies. There is no way to get the whole picture.
 
 The Redux pattern creates a layer between the state-change-trigger and the actual-action. This creates a very clear view of application states and behavior.
 
