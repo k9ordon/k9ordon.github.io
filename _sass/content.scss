@@ -21,10 +21,11 @@ article {
         }
     }
     img[src*=".giphy.com/"], img[data-original*=".giphy.com/"].loading {
-        width: calc(100% + 38px);
-        max-width: 200%;
-
-        margin:0 -19px;
+        // width: calc(100% + 38px);
+        // max-width: 200%;
+        //
+        // margin:0 -19px;
+        width: 100%;
         min-height:200px;
         max-height: 500px;
     }
