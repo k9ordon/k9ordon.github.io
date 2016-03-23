@@ -2,6 +2,7 @@
 title: Redux.js - Make the state sane again
 updated: 2016-03-22 18:00
 category: Redux.js
+tweet: 712588476286373888
 ---
 
 [Redux](http://redux.js.org/) is a framework that helps you sane your application states :heart_eyes:. It lets you write applications that behave consistently and predictable. Redux is basically a pattern for a single state container handling all your state changes by dispatching a state and later use a reducer to compute the state change. It's easy to recreate the same application state or even [timetravel](https://github.com/gaearon/redux-devtools) through state changes :sunglasses:.
@@ -117,6 +118,7 @@ In the click handler, we start a state change by dispatching the action object i
 
 ```js
 // File: reducer.js
+
 import { ITEM_SELECTED } from './action';
 
 export function Item_Reducer(state = [], action) {
@@ -153,7 +155,7 @@ If we run this example again we got modified states after clicking an item.
 Now we bind the reducer to our store. We replace emptyReducer with our real Item_Reducer and add an initial application state.
 
 ```js
-File:store.js
+// File: store.js
 
 import { createStore } from 'redux';
 import { Item_Reducer } from './reducer';
@@ -169,6 +171,7 @@ Last part we need to do is let the UI react to the state changes. So we create a
 
 ```js
 // File: main.js
+
 ...
 let update = function() {
     for (var item of store.getState().Items) {
