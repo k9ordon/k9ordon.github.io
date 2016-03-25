@@ -2,6 +2,7 @@
 title: ES6 Modules - Single Instance Pattern
 updated: 2016-03-22 21:15
 category: ES6
+tweet: 713287171885633536
 ---
 
 In this post, we will create a singleton like class in beautiful minimal vanilla es6 module syntax. Singletons exports are useful for single instance modules without reading and writing to the global space (```window```, ```window.app```, ...). Our singleton like instance can easily be im/exported with es6 module syntax.  Additionally, classes can be used in a higher level of the class chain if exported. The magic behind is simple: **ES6 Modules are singletons - the instance is created when module is loaded.**
