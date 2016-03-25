@@ -145,6 +145,8 @@ document.dispatchEvent(
 
 Thats all. **Pattern > Package**
 
+![Gordux.js Flow](http://i.giphy.com/PJbWFtODqfq5q.gif)
+
 - Run a [Gordux Demo](https://k94n.com/gordux.js/)
 
 
