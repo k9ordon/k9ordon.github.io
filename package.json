@@ -24,7 +24,8 @@
     "grunt-contrib-concat": "^1.0.0",
     "grunt-contrib-imagemin": "^1.0.0",
     "grunt-contrib-uglify": "^1.0.0",
-    "grunt-pngmin": "^1.0.2",
+    "grunt-imageoptim": "^1.4.1",
+    "grunt-pngquant": "^0.1.8",
     "time-grunt": "^1.3.0"
   }
 }
