@@ -12,15 +12,43 @@ To the rescue, Redux introduced a simple layer between triggering a state change
 
 ![redux ui flow](/assets/build/gordux/flow-0.png)
 
-After some beers, I found out all of the benefits about saning the state can be archived using the redux pattern without redux. Let's see how this works.
+:beers: After some beers, I found out all of the benefits of civilize the state in a browser application can be archived using the redux pattern without redux. Thanks to [Manu Ninja](https://manu.ninja) for merging "gordon" and "redux" to "gordux".
 
-The implementation of the action trigger (UI event) and the logic of updating the state has nothing to do with redux. So check this off.
+Let's see how this works.
+
+Think of a common UI application state cycle. You click a ```<button>``` and something happens with the content of a dom element (```<div>```).
+
+The cycle starting with a event listener ...
+
+```js
+// UI event listener
+
+let $button = document.querySelector('button');
+$button.addEventListener("click", function() {
+  // some amazing action will happen
+  // ... like calcualteStuffAndRender()
+});
+```
+
+... and typicaly finishes with a dom update depending on your view-framework. As a basic principle something like this ```innerHTML``` replacement:
+
+```js
+// UI render method
+
+function render() {
+  let $div = document.querySelector('div');
+  $div.innerHTML = store;
+}
+```
+
+
+The implementation of the UI event and the logic of updating the state has nothing to do with redux. No dependency - so check this off.
 
 ![flow stage 1](/assets/build/gordux/flow-1.png)
 
 ## Actions
 
-In Redux actions are simple functions returning javascript objects containing a ```type``` property and a payload with properties like ```id``` to calculate a state change. The descript what is happening - not how.
+In Redux actions are simple functions returning javascript objects containing a ```type``` property and a payload with properties like ```id``` to calculate a state change. They descript **what is happening** with the state - not how.
 
 ```js
 const COUNT_UP = "COUNT_UP";
@@ -31,11 +59,11 @@ function countUp() {
 }
 ```
 
-Actions say the [same as in redux](http://redux.js.org/docs/basics/Actions.html).
+Actions are the [same as in redux](http://redux.js.org/docs/basics/Actions.html).
 
 ## Reducers
 
-Reducers define the how. The have the single task to take a ```state``` and a ```action``` argument and return the new state. Read more about [Reducers](http://redux.js.org/docs/basics/Reducers.html) in the Redux Docs.
+Reducers define **how the states changes** with a given action. Their single task is to match modify the ```state``` based on the ```action``` argument and return the new state. Read more about [Reducers](http://redux.js.org/docs/basics/Reducers.html) in the Redux Docs.
 
 ```js
 function reducer(state, action) {
@@ -48,15 +76,15 @@ function reducer(state, action) {
 }
 ```
 
-As they are pure js. Gordux.js has nothing todo. :beer:
+As they are pure javascript functions - gordux.js has nothing to change on this pattern. :beer:
 
-Look at our flow chart:
+Lets look at our flow chart progress:
 
 ![flow stage 2](/assets/build/gordux/flow-2.png)
 
 ## Store
 
-What is the store? Actually, the redux state-store is a plain js object. It's the single source of state-truth. Every action is dispatched through the store's reducer function. This can call one or a chain of reducers. After modifying the state, the store runs all registered state change listeners. Let's see what react does.
+What is the store? Actually, the redux state-store is a plain js object. It's the single source of state-truth. Every action is dispatched through the store's reducer function (:guardsman: this can be one or a chain of reducers). After modifying the state, the store emits a state change event to all listeners. Let's see how this looks in redux:
 
 ```js
 // import redux dependency
@@ -71,13 +99,18 @@ store.subscribe(render)
 // dispatch a action
 store.dispatch(countUp());
 ```
-Action dispatches to store. After reducers calcualted new state, store dispatches state change event to listeners.
+
+In a nutshell:
+
+- Actions Events are dispatches to the store.
+- Store reducers calcualted new state.
+- State event dispatches to subscribed listeners.
 
 ![flow stage 3](/assets/build/gordux/flow-3.png)
 
 ### Events Emitter
 
-We already have an event emitter in the browser lets look how this works.
+We already using the event dispatcher in the browser. This is how to fire a custom event through dom event listeners:
 
 ```js
 // subscribe
@@ -85,11 +118,11 @@ document.addEventListener('yolo', function(event) {
     alert('yo' + event.detail);
 }, false);
 
-// emit
+// dispatch
 document.dispatchEvent(new CustomEvent('yolo', { detail: "lo"}));
 ```
 
-The lets do a redux store without ```import { createStore } from 'redux'```.
+The lets do a redux store without ```import { createStore } from 'redux'```. In gordux.js pattern you subscribe to ```action```-events and run the reducer with the event payload. After that we dispatch a ```state```-event to notifiy the application that state has changed.
 
 ```js
 // not import gordux dependency
@@ -98,7 +131,7 @@ The lets do a redux store without ```import { createStore } from 'redux'```.
 let store = {};
 
 document.addEventListener('action', function(e) {
-    store = reducer(store, e.detail || {});
+    store = reducer(store, e.detail);
     document.dispatchEvent(new CustomEvent('state'));
 }, false);
 
@@ -106,10 +139,12 @@ document.addEventListener('action', function(e) {
 document.addEventListener('state', render);
 
 // dispatch a action
-document.dispatchEvent(new CustomEvent('action', { detail: countUp()}));
+document.dispatchEvent(
+  new CustomEvent('action', { detail: countUp()})
+);
 ```
 
-Thats all.
+Thats all. Pattern > Package.
 
 - Run a [Gordux Demo](https://k94n.com/gordux.js/)
 
@@ -145,9 +180,9 @@ document.addEventListener('state', function(e) {
 });
 ```
 
+## More :ocean: :ocean: :ocean:
 
-
-## More Links
-
-- [Gordux Github Repo](https://github.com/k9ordon/gordux.js)
-- [Gordux Demo](https://k94n.com/gordux.js/)
+- View the [full pattern](https://github.com/k9ordon/gordux.js/blob/master/pattern.html)
+- Contribute to [Gordux.js Github Repo](https://github.com/k9ordon/gordux.js)
+- Run a [Gordux.js Demo](https://k94n.com/gordux.js/)
+- [Include gordux.js from our CDN](https://k94n.com/assets/gordux.js)
