@@ -47,8 +47,8 @@ module.exports = function(grunt) {
                     concurrency: 8, // specify how many exucutables get spawned in parallel
                     colors: 128, // reduce colors to 128
                     ext: '.png', // use .png as extension for the optimized files
-                    quality: '55-80', // output quality should be between 65 and 80 like jpeg quality
-                    speed: 10, // pngquant should be as fast as possible
+                    quality: '10-80', // output quality should be between 65 and 80 like jpeg quality
+                    speed: 3, // pngquant should be as fast as possible
                     iebug: false // optimize image for use in Internet Explorer 6
                 },
                 files: [{
