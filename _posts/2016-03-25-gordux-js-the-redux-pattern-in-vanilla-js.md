@@ -1,7 +1,7 @@
 ---
 title: Gordux.js - The redux pattern in vanilla.js
 updated: 2016-03-25 23:00
-category: vanilla.js
+category: Vanilla.js
 tweet: 713641698203709440
 ---
 
