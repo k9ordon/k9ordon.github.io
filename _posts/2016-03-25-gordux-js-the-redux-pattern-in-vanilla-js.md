@@ -2,6 +2,7 @@
 title: Gordux.js - The redux pattern in vanilla.js
 updated: 2016-03-25 23:00
 category: vanilla.js
+tweet: 713641698203709440
 ---
 
 I love the idea of [Redux](/redux-make-the-state-sane-again). Managing state in an application is critical! There is nothing like "the state of a web application". Let's go back a few years when there were none of these "javascript applications". The [query string](https://en.wikipedia.org/wiki/Query_string) did a quite good job in shipping the document (aka web application) with a predictable state. If we change application state we do this by following a hyperlink :cool:.
