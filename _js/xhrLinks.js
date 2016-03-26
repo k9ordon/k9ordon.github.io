@@ -1,25 +1,34 @@
 function supports_history_api() {
-  return !!(window.history && history.pushState);
+    return !!(window.history && history.pushState);
 }
 
-function dispatchPage(url) {
-    if(!url) return console.error("No url");
+function dispatchPage(url, scrollToTop) {
+    if(!url) throw "No url";
+
+    setProgress(20);
 
 	var oReq = new XMLHttpRequest();
 	oReq.onload = function(e) {
-        applyPage(url, e.target.response);
+        setProgress(70);
+        applyPage(url, e.target.response, scrollToTop);
 	};
 	oReq.open('GET', url, true);
 	oReq.send();
 }
 
-function applyPage(url, markup) {
+function applyPage(url, markup, scrollToTop) {
     var $root = document.createElement("div");
     $root.innerHTML = markup;
 
     var $newTitle = $root.querySelector("title");
     var $newMain = $root.querySelector("main");
     var $newLogoA = $root.querySelector(".logo a");
+
+    if(scrollToTop) {
+        setTimeout(function() {
+            window.scrollTo(0,0);
+        },100);
+    }
 
     document.title = $newTitle.innerText;
     document.querySelector("main").innerHTML = $newMain.innerHTML;
@@ -30,6 +39,8 @@ function applyPage(url, markup) {
     ga('send', 'pageview');
 
     renderPage();
+
+    setProgress(100);
 }
 
 function bindLinkHandler($links) {
@@ -39,10 +50,7 @@ function bindLinkHandler($links) {
 		$link.addEventListener("click", function(e) {
             var linkPath = this.pathname;
 			history.pushState({ url: linkPath }, null, linkPath);
-			dispatchPage(linkPath);
-            setTimeout(function() {
-                window.scrollTo(0,0);
-            },100);
+			dispatchPage(linkPath, true);
             e.preventDefault();
 		});
 	}
@@ -56,7 +64,7 @@ function initXhrLinks() {
     history.replaceState( { url: path } , false, path);
 
     window.addEventListener("popstate", function(e) {
-    	dispatchPage(e.state.url);
+    	dispatchPage(e.state.url, false);
     });
 }
 
