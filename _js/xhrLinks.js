@@ -7,13 +7,13 @@ function dispatchPage(url) {
 
 	var oReq = new XMLHttpRequest();
 	oReq.onload = function(e) {
-        applyPage(e.target.response);
+        applyPage(url, e.target.response);
 	};
 	oReq.open('GET', url, true);
 	oReq.send();
 }
 
-function applyPage(markup) {
+function applyPage(url, markup) {
     var $root = document.createElement("div");
     $root.innerHTML = markup;
 
@@ -26,7 +26,8 @@ function applyPage(markup) {
     document.querySelector("main").classList = $newMain.classList;
     document.querySelector(".logo a").href = $newLogoA.href || "/";
 
-    if(ga) ga('send', 'pageview');
+    ga('set', { page: url, title: document.title });
+    ga('send', 'pageview');
 
     renderPage();
 }
