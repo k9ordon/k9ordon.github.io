@@ -22,6 +22,10 @@ a {
   text-decoration: none;
   border-bottom: 2px solid #BADDF3;
 
+  &[href^='/'] {
+      border-color:lightgreen;
+  }
+
   -webkit-tap-highlight-color: rgba(186,221,243,0.5);
 
   &.image {
