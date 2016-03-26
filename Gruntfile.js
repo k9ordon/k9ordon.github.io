@@ -19,10 +19,11 @@ module.exports = function(grunt) {
             js: {
                 files: {
                     'assets/build/main.js': [
-                        'bower_components/ga-lite/dist/ga-lite.js',
+                        // 'bower_components/ga-lite/dist/ga-lite.js',
                         'bower_components/vanilla-lazyload/dist/lazyload.js',
                         'bower_components/loadcss/src/loadCSS.js',
                         '_js/ready.js',
+                        '_js/xhrLinks.js',
                         '_js/main.js'
                     ]
                 }
