@@ -40,7 +40,9 @@ function bindLinkHandler($links) {
             var linkPath = this.pathname;
 			history.pushState({ url: linkPath }, null, linkPath);
 			dispatchPage(linkPath);
-            window.scrollTo(0,0);
+            setTimeout(function() {
+                window.scrollTo(0,0);
+            },100);
             e.preventDefault();
 		});
 	}
