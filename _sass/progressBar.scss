@@ -2,14 +2,16 @@
     position: fixed;
     top: 1px;
     left: 0;
-    height: 1px;
+    height: 2px;
     background: #b03100;
+    box-shadow: 0 0 10px #b03100;
     width: 0;
 
     -webkit-transition: width 0.4s ease;
     transition: width 0.4s ease;
 
-    top:-2px;
+    top:-20px;
+
     &--loading {
         top:0;
     }
