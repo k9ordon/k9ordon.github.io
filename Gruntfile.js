@@ -9,7 +9,7 @@ module.exports = function(grunt) {
                 src: ["assets/build/main.js"]
             },
             images: {
-                src: ["assets/build/**/*.{png,jpg,gif}", "!assets/build/emoji"]
+                src: ["assets/build/**/*.{png,jpg,gif}", "!assets/build/emoji/**"]
             },
             gemoji: {
                 src: ["assets/build/emoji"]
