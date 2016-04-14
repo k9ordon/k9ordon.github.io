@@ -22,6 +22,7 @@ module.exports = function(grunt) {
                         // 'bower_components/ga-lite/dist/ga-lite.js',
                         'bower_components/vanilla-lazyload/dist/lazyload.js',
                         'bower_components/loadcss/src/loadCSS.js',
+                        '_js/loadJs.js',
                         '_js/progressBar.js',
                         '_js/ready.js',
                         '_js/xhrLinks.js',

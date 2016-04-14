@@ -15,6 +15,10 @@ function renderPage() {
     if(supports_history_api()) {
         bindLinkHandler(document.querySelectorAll("body > main a[href^='/']"));
     }
+
+    if(document.querySelectorAll('.twitter-tweet').length > 0) {
+        loadJs("//platform.twitter.com/widgets.js");
+    }
 }
 
 ready(init);
