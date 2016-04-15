@@ -2,6 +2,7 @@
 title: K4 - A loosely coupled front-end
 updated: 2016-04-15 01:22
 category: Frontend
+tweet: 720908539951230976
 ---
 
 This post covers my talk about concepts and technologies used to build the 4th iteration of [karriere.at](http://karriere.at). Flexible and solid front-end modules based on BEM, ES6, HBS, and Webpack.
