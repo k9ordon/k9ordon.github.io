@@ -86,6 +86,7 @@ So lets hype like good 'ol Steve Ballmer: "We are developers! We are developers!
 ## Hyperlinks :zap: :zap: :zap:
 
 - [Conference Site](http://www.wearedevelopers.org/)
+- Article at [karriere.at dev blog](http://www.karriere.at/dev-blog/article/view/a-loosely-coupled-front-end) :de:
 - [Behind the Mask – Interview with Klemens Schreiber, Front-end Lead Developer of karriere.at](http://www.wearedevelopers.org/3072-2/)
 - [Slides at speakerdeck](https://speakerdeck.com/k9ordon/a-loosely-coupled-front-end)
 
