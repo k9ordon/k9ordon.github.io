@@ -30,12 +30,6 @@ layout: default
 
 <ul class="action">
 
-    <li id="heymoji" class="action-block action-block--fullwidth">
-      {% for emoji in site.heymojis.post %}
-          <iframe src="//heymoji.cool/embed?emoji={{emoji}}&url={{site.url}}{{ page.url }}" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:70px; height:35px;" allowtransparency="true"></iframe>
-      {% endfor %}
-    </li>
-
     {% if page.tweet %}
     <li class="action-block">
         <a class="action-link" href="https://twitter.com/{{ site.author.twitter }}/status/{{ page.tweet }}">
