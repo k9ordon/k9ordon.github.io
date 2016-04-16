@@ -13,4 +13,8 @@
     {{ content | replace: "iframe src=", "iframe data-original=" }}
 {% endcapture %}
 
+{% capture content %}
+    {{ content | replace: "iframe src=", "iframe data-original=" }}
+{% endcapture %}
+
 {{ content }}
