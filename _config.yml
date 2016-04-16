@@ -42,6 +42,9 @@ compress_html:
     ingore:
         envs:       [ "test" ]
 
+heymojis:
+  post:            [ "green_heart", "v", "pizza" ]
+
 emoji:
   src: "/assets/build"
 
