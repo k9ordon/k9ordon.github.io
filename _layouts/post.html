@@ -31,10 +31,11 @@ layout: default
 <ul class="action">
 
     <li class="action-block">
-        <a class="action-link" href="{{site.baseurl}}/">
-            <img class="emoji" title=":open_hands:" alt=":open_hands:" src="/assets/build/emoji/unicode/1f450.png" height="20" width="20" align="absmiddle"> More
+        <a class="action-link" href="https://twitter.com/{{ site.author.twitter }}/status/{{ page.tweet }}">
+            <img class="emoji" src="/assets/build/emoji/unicode/1f4ac.png" height="20" width="20" align="absmiddle"> Comment
         </a>
     </li>
+    {% endif %}
 
     <li class="action-block">
         <a class="action-link" href="{{site.mailchimp.subscribe}}">
@@ -42,15 +43,12 @@ layout: default
         </a>
     </li>
 
-    {% if page.tweet %}
 
     <li class="action-block">
-        <a class="action-link" href="https://twitter.com/{{ site.author.twitter }}/status/{{ page.tweet }}">
-            <img class="emoji" src="/assets/build/emoji/unicode/1f4ac.png" height="20" width="20" align="absmiddle"> Comment
+        <a class="action-link" href="{{site.baseurl}}/">
+            <img class="emoji" title=":open_hands:" alt=":open_hands:" src="/assets/build/emoji/unicode/1f450.png" height="20" width="20" align="absmiddle"> More
         </a>
     </li>
-
-    {% endif %}
 
     <li class="action-block action-block--fullwidth">
         <a class="action-link" href="{{ site.related_posts[0].url }}">
