@@ -12,12 +12,21 @@ function init() {
 function renderPage() {
     new LazyLoad();
 
+    new LazyLoad({
+        elements_selector: "iframe",
+        show_while_loading: true
+    });
+
+    new LazyLoad({
+        elements_selector: ".twitter-tweet",
+        show_while_loading: true,
+        callback_set: function() {
+            loadJs("//platform.twitter.com/widgets.js");
+        }
+    });
+
     if(supports_history_api()) {
         bindLinkHandler(document.querySelectorAll("body > main a[href^='/']"));
-    }
-
-    if(document.querySelectorAll('.twitter-tweet').length > 0) {
-        loadJs("//platform.twitter.com/widgets.js");
     }
 }
 

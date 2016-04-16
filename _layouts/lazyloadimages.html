@@ -1,8 +1,0 @@
----
-# lazy load images
----
-{% capture content %}
-    {{ content | replace: "img src=", "img data-original=" }}
-{% endcapture %}
-
-{{ content | replace: 'src="/assets/build/emoji', 'data-original="/assets/build/emoji'}}

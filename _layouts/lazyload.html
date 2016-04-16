@@ -1,0 +1,16 @@
+---
+# lazy load
+---
+{% capture content %}
+    {{ content | replace: "img src=", "img data-original=" }}
+{% endcapture %}
+
+{% capture content %}
+  {{ content | replace: 'src="/assets/build/emoji', 'data-original="/assets/build/emoji'}}
+{% endcapture %}
+
+{% capture content %}
+    {{ content | replace: "iframe src=", "iframe data-original=" }}
+{% endcapture %}
+
+{{ content }}
