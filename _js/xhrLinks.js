@@ -67,5 +67,3 @@ function initXhrLinks() {
     	dispatchPage(e.state.url, false);
     });
 }
-
-init();
