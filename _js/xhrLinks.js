@@ -26,7 +26,12 @@ function applyPage(url, markup, scrollToTop) {
 
     if(scrollToTop) {
         setTimeout(function() {
-            window.scrollTo(0,0);
+            var scrollTop = document.body.scrollTop,
+                xhrScrollTop = 150;
+
+            if(scrollTop > xhrScrollTop) scrollTop = 0;
+
+            window.scrollTo(0,scrollTop);
         },100);
     }
 
