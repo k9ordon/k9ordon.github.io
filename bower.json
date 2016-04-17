@@ -20,6 +20,7 @@
     "ga-lite": "jehna/ga-lite#~1.0.1",
     "vanilla-lazyload": "~1.5.8",
     "gemoji": "github/gemoji#~2.1.0",
-    "loadcss": "~1.2.0"
+    "loadcss": "~1.2.0",
+    "gridlover-mixin": "*"
   }
 }

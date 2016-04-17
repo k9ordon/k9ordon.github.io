@@ -1,3 +1,7 @@
+@import 'gridlover-config';
+@import '../bower_components/gridlover-mixin/sass/rhythm';
+
+
 code,
 pre {
   font-family: Consolas, monospace, x;
@@ -9,14 +13,13 @@ code {
   // color: #b4a1d6;
   font-weight: bold;
   padding: 2px 6px;
-  font-size: 13px;
+  //font-size: 13px;
 }
 pre {
   display: block;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 14px;
-  line-height: 18px;
+  @include rhythm(0,1,1);
+  //font-size: 14px;
+  //line-height: 18px;
   white-space: pre;
   overflow-x: auto;
   background-color: #f9f9f9;
@@ -24,7 +27,7 @@ pre {
   padding: 1rem;
 
   code {
-    font-size: 100%;
+    //font-size: 100%;
     color: inherit;
     background-color: transparent;
     padding: 0;
@@ -33,7 +36,7 @@ pre {
 table {
   width: 100%;
   table-layout: fixed;
-  margin: 45px 0;
+  @include rhythm(0,1,1);
   thead {
     background: #f2f2f2;
   }
@@ -55,36 +58,38 @@ mark {
 }
 blockquote {
   // border-left: 5px solid #ccc;
-  margin: 40px 0;
+  margin:0;
+  @include rhythm(1,1,1);
   padding: 5px 30px;
   background-color: #201632;
   color: #b4a1d6;
+
+  p {
+      @include rhythm(1,1,1);
+  }
 }
 
 article {
-  max-width: 500px;
-  margin: 0 auto;
-
   hr {
     border: 0;
     border-bottom: 1px solid #000;
-    margin: 30px 0;
+    @include rhythm(0,1,1);
   }
 
   p, li {
-    font-size: 15px;
-    line-height: 1.9em;
+    //font-size: 15px;
+    //line-height: 1.9em;
     word-wrap: break-word;
   }
 
   ul {
       list-style: none;
       li {
-          margin:0;
+        //   margin:0;
           background-image: url(/assets/build/emoji/unicode/1f449.png);
           background-size: 20px 20px;
           background-position: 0 5px;
-          padding: 0 0 0 25px;
+        //   padding: 0 0 0 25px;
           background-repeat: no-repeat;
       }
 

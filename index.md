@@ -10,8 +10,6 @@ layout: default
         {{ site.description | replace: 'love', ":heart:" }} <a href="/about">more</a>
     </p>
 
-    <div class="divider"></div>
-
     <ul>
 
         {% for post in site.posts %}

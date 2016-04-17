@@ -1,23 +1,40 @@
+@import 'gridlover-config';
+@import '../bower_components/gridlover-mixin/sass/rhythm';
+
 article {
-    max-width: 500px;
-    margin: 0 auto;
+
+    .article-header {
+    }
+
+    .article-body {
+        max-width: $wrap-width;
+        margin: 0 auto;
+    }
+
     hr {
         border: 0;
         border-bottom: 1px solid #000;
-        margin: 30px 0;
+        @include rhythm(0, 1, 1);
     }
-    p,
-    li {
-        font-size: 15px;
-        line-height: 1.9em;
+
+    time, .readtime {
+        display: inline-block;
+        @include rhythm(1, 0, 1);
+    }
+
+    p {
+        // font-size: 15px;
+        // line-height: 1.9em;
+        @include rhythm(0, 0, 1);
         word-wrap: break-word;
     }
     ul {
         list-style: none;
         li {
-            margin: 0;
-            padding: 0 0 0 25px;
-            background-repeat: no-repeat;
+            // margin: 0;
+            padding-left: 25px;
+            @include rhythm(0, 0, 0);
+            // background-repeat: no-repeat;
         }
     }
     img[src*=".giphy.com/"], img[data-original*=".giphy.com/"].loading {
@@ -27,7 +44,7 @@ article {
         // margin:0 -19px;
         width: 100%;
         min-height:200px;
-        max-height: 500px;
+        max-height: $wrap-width;
     }
     img.loading {
         height:50px;
@@ -43,8 +60,9 @@ article {
 }
 .action {
     // margin:0;
-    max-width: 500px;
+    max-width: $wrap-width;
     margin: 40px auto;
+    @include rhythm(0, 1, 1);
     text-align: center;
 
     &-block {
@@ -53,11 +71,11 @@ article {
         overflow: hidden;
         // padding: 4px 40px;
         // font-size: 18px;
-        background: #fff;
+        // background: #fff;
         // width:50%;
         width:150px;
         // min-width: 90px;
-        padding: 0 0 15px;
+
         // @media (min-width: 992px) {
         //     display:inline-block;
         // }
@@ -71,10 +89,12 @@ article {
         // overflow: hidden;
         text-overflow: ellipsis;
         max-width: 100%;
+        @include rhythm(0, 0, 1);
     }
     .emoji {
         // break bam because gemoji
-        margin: 15px auto;
+        margin: 0 auto;
+        @include rhythm(1, 0.5, 0.5);
         display: block;
         // width: 30px!important;
         // height: 30px!important;
