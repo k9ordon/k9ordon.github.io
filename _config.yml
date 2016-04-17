@@ -43,7 +43,7 @@ compress_html:
         envs:       [ "test" ]
 
 heymojis:
-  post:            [ "green_heart", "v", "pizza" ]
+  post:            [ "1f49a", "1f633", "1f355" ]
 
 emoji:
   src: "/assets/build"

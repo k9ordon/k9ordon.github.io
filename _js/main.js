@@ -25,6 +25,17 @@ function renderPage() {
         }
     });
 
+    new LazyLoad({
+        elements_selector: "#heymojis",
+        show_while_loading: true,
+        callback_set: function() {
+            loadJs("https://cdn.firebase.com/js/client/2.4.2/firebase.js", function() {
+                heymojiFirebase = new Firebase("https://k94ncom-heymoji.firebaseio.com/");
+                bindHeymojiHandler(document.querySelectorAll("body > main .heymoji"));
+            });
+        }
+    });
+
     if(supports_history_api()) {
         bindLinkHandler(document.querySelectorAll("body > main a[href^='/']"));
     }
