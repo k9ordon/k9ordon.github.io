@@ -18,6 +18,8 @@ article {
     }
 
     time, .readtime {
+        color: #555;
+
         display: inline-block;
         @include rhythm(1, 0, 1);
     }
@@ -28,6 +30,12 @@ article {
         @include rhythm(0, 0, 1);
         word-wrap: break-word;
     }
+
+    .article-body > p:first-child {
+        @include rhythm(1, 0, 1);
+        color: #555;
+    }
+
     ul {
         list-style: none;
         li {
