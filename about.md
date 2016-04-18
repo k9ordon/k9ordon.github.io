@@ -3,7 +3,7 @@ layout: page
 title: Klemens Gordon
 ---
 
-Hi internet! :boar:
+Hi internet! :hamburger::boar:
 
 My name is Klemens Gordon - I am a fullstack–webapplication-developer from austria.
 I enjoy javascript,
