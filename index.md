@@ -2,13 +2,14 @@
 layout: default
 ---
 
-<section itemscope="" itemtype="http://schema.org/Blog">
+<h1 class="title" itemprop="name">{{site.title}}</h1>
 
-    <h1 class="title" itemprop="name">{{site.title}}</h1>
+<p class="description">
+    {{ site.description | replace: 'love', ":heart:" }} <a href="/about">more</a>
+</p>
 
-    <p class="description">
-        {{ site.description | replace: 'love', ":heart:" }} <a href="/about">more</a>
-    </p>
+<section class="indexSection postList" itemscope="" itemtype="http://schema.org/Blog">
+  <h3>Articles</h3>
 
     <ul>
 
@@ -31,7 +32,10 @@ layout: default
 
 </section>
 
-
+<section class="indexSection activityStream">
+  <h3>Activity</h3>
+  <ul></ul>
+</section>
 
 <ul class="action">
 

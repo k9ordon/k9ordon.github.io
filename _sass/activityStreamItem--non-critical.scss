@@ -1,0 +1,27 @@
+@import 'gridlover-config';
+@import 'gridlover-rhythm';
+
+.activityStreamItem {
+    @include rhythm(0, 0, 1);
+    list-style: none;
+
+    @media (min-width: 992px) {
+        // text-align: right;
+    }
+
+    &-content {
+        @include rhythm(0, 0, 0);
+        display: inline-block;
+        text-align: left;
+        background:lightgreen;
+        // color:#fff;
+        border-radius: 10px;
+        padding-left:10px;
+        padding-right: 10px;
+    }
+
+    &-date {
+        // text-align: right;
+        @include rhythm(0, 0, 0);
+    }
+}
