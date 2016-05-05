@@ -8,7 +8,7 @@ function populateActivityStream($el) {
 
     if(!activityFirebase) {
         activityFirebase = new Firebase("https://k94ncom-activity.firebaseio.com/log");
-        activityFirebase.orderByChild("date").limitToLast(10).on("child_added", function(snapshot) {
+        activityFirebase.orderByChild("date").limitToLast(5).on("child_added", function(snapshot) {
             // console.log(snapshot.val().service, snapshot.val().date, snapshot.val().content, snapshot.val().link );
             addActivity(snapshot.val());
             renderActivityStream();
@@ -43,19 +43,19 @@ function renderActivityStream() {
         $content.innerHTML = item.content;
         $item.appendChild($content);
 
-        var $link = document.createElement("A");
-        $link.href = item.link;
-        $link.innerHTML = item.link;
-        $content.appendChild($link);
+        // var $link = document.createElement("A");
+        // $link.href = item.link;
+        // $link.innerHTML = item.link;
+        // $content.appendChild($link);
 
         var $date = document.createElement("DIV");
         $date.classList.add('activityStreamItem-date');
-        $date.innerHTML = item.date;
+        $date.innerHTML = prettyDate(new Date(), new Date(item.date));
         $item.appendChild($date);
 
         $list.insertBefore($item, $list.firstChild);
     }
 
-    $activityStream.innerHTML = "";
+    $activityStream.querySelector('ul').remove();
     $activityStream.appendChild($list);
 }
