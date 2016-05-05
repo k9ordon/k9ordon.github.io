@@ -4,7 +4,7 @@ var activityStreamItems = [];
 
 function populateActivityStream($el) {
     $activityStream = $el;
-    console.log('populateActivityStream', $el);
+    // console.log('populateActivityStream', $el);
 
     if(!activityFirebase) {
         activityFirebase = new Firebase("https://k94ncom-activity.firebaseio.com/log");
