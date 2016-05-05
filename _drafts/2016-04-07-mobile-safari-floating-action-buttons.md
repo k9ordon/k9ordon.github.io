@@ -11,7 +11,7 @@ Lets say we are in [perfect conditions](http://www.zeldman.com/2015/06/03/materi
 
 ![a fab](/assets/build/mobile-safari-floating-action-buttons/fab.png)
 
-Soon this concept moved to the web. As I recently revisited this implementation of a Conversion button. When I place the button at the bottom, I ran into some old but serious Mobile Safari UX issues (known from bottom toolbars and similar UI stuff fixed on bottom).
+Soon this concept moved to the web. I recently revisited this implementation of a Conversion button. When I placed the button at the bottom, I ran into some old but serious Mobile Safari UX issues (known from bottom toolbars and similar UI stuff fixed on bottom).
 
 ## The problem is simple
 
