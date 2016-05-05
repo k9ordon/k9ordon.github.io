@@ -1,0 +1,15 @@
+@import 'gridlover-config';
+@import 'gridlover-rhythm';
+
+.activityStreamItem {
+    overflow: hidden;
+
+    &-content {
+        @include rhythm(0, 0.5, 0.5);
+        background:lightgreen;
+        color:#fff;
+        border-radius: 10px;
+        padding-left:10px;
+        padding-right: 10px;
+    }
+}

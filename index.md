@@ -31,7 +31,9 @@ layout: default
 
 </section>
 
-
+<section class="activityStream">
+  
+</section>
 
 <ul class="action">
 

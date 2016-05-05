@@ -26,6 +26,16 @@ function renderPage() {
     });
 
     new LazyLoad({
+        elements_selector: ".activityStream",
+        show_while_loading: true,
+        callback_set: function() {
+            loadJs("https://cdn.firebase.com/js/client/2.4.2/firebase.js", function() {
+                populateActivityStream(document.querySelector("body > main .activityStream"));
+            });
+        }
+    });
+
+    new LazyLoad({
         elements_selector: "#heymojis",
         show_while_loading: true,
         callback_set: function() {

@@ -27,6 +27,7 @@ module.exports = function(grunt) {
                         '_js/ready.js',
                         '_js/xhrLinks.js',
                         '_js/heymoji.js',
+                        '_js/activityStream.js',
                         '_js/main.js'
                     ]
                 }
