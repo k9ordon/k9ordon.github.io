@@ -33,13 +33,15 @@
     }
 
     ul {
-        max-width: 100%;
+        max-width: $wrap-width;
         @include rhythm(0,1,0);
+        margin-left: auto;
+        margin-right: auto;
 
-        @media (min-width: 992px) {
-            max-width: $wrap-width;
-            margin-left: auto;
-            margin-right: auto;
-        }
+        // @media (min-width: 992px) {
+        //     max-width: $wrap-width;
+        //     margin-left: auto;
+        //     margin-right: auto;
+        // }
     }
 }
