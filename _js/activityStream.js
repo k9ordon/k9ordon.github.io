@@ -91,7 +91,7 @@ function createActivityStreamItem(item) {
 
     var $date = document.createElement("span");
     $date.classList.add('activityStreamItem-date');
-    $date.innerHTML = prettyDate(new Date(), new Date(item.date));
+    $date.innerHTML = prettyDate(new Date(item.date.slice(0,-5)));
     $meta.appendChild($date);
 
     var $service = document.createElement("span");
