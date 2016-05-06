@@ -5,6 +5,7 @@
     box-sizing: border-box;
     // width: 100%;
     // border-top:1px solid lightgray;
+    @include rhythm(0,0,2);
 
     vertical-align: top;
 
