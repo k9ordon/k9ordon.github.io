@@ -61,6 +61,9 @@ function createActivityStreamItem(item) {
         emoji = "/assets/build/emoji/unicode/2b50.png";
     }
 
+    // nl to br
+    content = content.replace(/\n/g, "<br />");
+
     // create item
     var $item = document.createElement("li");
     $item.classList.add('activityStreamItem');
